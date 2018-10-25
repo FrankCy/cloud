@@ -1,4 +1,4 @@
-# Spring Cloud 练习 #
+# Spring Cloud 2.0+ #
 #### 基于Spring Boot 2.0+ ####
 
 - 鸣谢
