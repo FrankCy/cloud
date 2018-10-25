@@ -1,13 +1,16 @@
 package com.spring.cloud.consul.client;
 
-import org.eclipse.jgit.internal.storage.reftree.Command;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
 import org.springframework.cloud.consul.discovery.ConsulDiscoveryClient;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
@@ -24,10 +27,33 @@ import java.util.List;
  */
 @SpringBootApplication
 @EnableDiscoveryClient
+@RestController
 public class ConsulClientApplication implements CommandLineRunner {
 
     @Autowired
     private ConsulDiscoveryClient consulDiscoveryClient;
+
+    @Autowired
+    private LoadBalancerClient loadBalancer;
+
+    @Autowired
+    private DiscoveryClient discoveryClient;
+
+    /**
+     * 从所有服务中选择一个服务（轮询）
+     */
+    @RequestMapping("/discover")
+    public Object discover() {
+        return loadBalancer.choose("consul-server-1").getUri().toString();
+    }
+
+    /**
+     * 获取所有服务
+     */
+    @RequestMapping("/services")
+    public Object services() {
+        return discoveryClient.getInstances("consul-server-1");
+    }
 
     @Override
     public void run(String... args) throws Exception {

@@ -11,6 +11,8 @@
     <modules>
         <module>cloud-eureka-server</module>
         <module>cloud-eureka-client</module>
+        <module>cloud-consul-client</module>
+        <module>cloud-consul-server</module>
     </modules>
 
     <parent>
