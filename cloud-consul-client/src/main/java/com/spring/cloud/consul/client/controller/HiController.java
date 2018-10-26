@@ -30,6 +30,14 @@ public class HiController {
     @Autowired
     private DiscoveryClient discoveryClient;
 
+    /**
+     * @description：一个测试程序
+     * @version 1.0
+     * @author: Yang.Chang
+     * @email: cy880708@163.com
+     * @date: 2018/10/26 下午5:34
+     * @mofified By:
+     */
     @RequestMapping("/helloConsul")
     public String HelloConsul() {
         ServiceInstance serviceInstance = loadBalancer.choose("consul-server-1");
@@ -40,7 +48,12 @@ public class HiController {
     }
 
     /**
-     * 从所有服务中选择一个服务（轮询）
+     * @description：从所有服务中选择一个服务（轮询）
+     * @version 1.0
+     * @author: Yang.Chang
+     * @email: cy880708@163.com
+     * @date: 2018/10/26 下午5:34
+     * @mofified By:
      */
     @RequestMapping("/discover")
     public Object discover() {
@@ -48,7 +61,12 @@ public class HiController {
     }
 
     /**
-     * 获取所有服务
+     * @description：获取所有服务
+     * @version 1.0
+     * @author: Yang.Chang
+     * @email: cy880708@163.com
+     * @date: 2018/10/26 下午5:34
+     * @mofified By:
      */
     @RequestMapping("/services")
     public Object services() {
