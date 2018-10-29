@@ -30,7 +30,6 @@ public class ConsulServerApplication {
 
     @RequestMapping(value = "/hi")
     public String hi(){
-
         return "hello world ! I'm :" + name + ":" + port;
     }
 
