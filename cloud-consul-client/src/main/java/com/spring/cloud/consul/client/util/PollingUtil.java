@@ -1,7 +1,5 @@
 package com.spring.cloud.consul.client.util;
 
-import com.spring.cloud.consul.client.pojo.Server;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
