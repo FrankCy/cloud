@@ -24,7 +24,7 @@ public class AuthFilter extends ZuulFilter {
 	
 	@Override
 	public boolean shouldFilter() {
-		// 判断是否需要进行处理
+		//判断是否需要进行处理
 		return true;
 	}
 

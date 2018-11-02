@@ -16,7 +16,8 @@ public class ZuulFallback implements FallbackProvider{
 
 	@Override
 	public String getRoute() {
-		return "*"; //可以配置指定的路由，值为serviceId，如sc-user-service
+		//可以配置指定的路由，值为serviceId，如sc-user-service
+		return "*";
 	}
 
 	@Override
@@ -38,7 +39,7 @@ public class ZuulFallback implements FallbackProvider{
 	           
 	            @Override
 	            public InputStream getBody() throws IOException {
-	            	  //定义自己的错误信息
+	            	//定义自己的错误信息
 	                return new ByteArrayInputStream(("microservice error").getBytes());
 	            }
 
