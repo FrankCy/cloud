@@ -21,10 +21,10 @@ import java.util.Map;
  */
 public class AuthFilter extends ZuulFilter {
 	private static final Logger logger = LoggerFactory.getLogger(AuthFilter.class);
-	
+
 	@Override
 	public boolean shouldFilter() {
-		//判断是否需要进行处理
+		// 判断是否需要进行处理
 		return true;
 	}
 
@@ -44,17 +44,17 @@ public class AuthFilter extends ZuulFilter {
 	public int filterOrder() {
 		return 0;
 	}
-	
+
 	private static Map<String, String> httpRequestToMap(HttpServletRequest request) {
-        Enumeration<String> headerNames = request.getHeaderNames();
-        Map<String, String> headers = new HashMap<>();
-        while (headerNames.hasMoreElements()) {
-            String headerName = headerNames.nextElement();
-            headers.put(headerName, request.getHeader(headerName));
-        }
-        return headers;
-    }
-	
+		Enumeration<String> headerNames = request.getHeaderNames();
+		Map<String, String> headers = new HashMap<>();
+		while (headerNames.hasMoreElements()) {
+			String headerName = headerNames.nextElement();
+			headers.put(headerName, request.getHeader(headerName));
+		}
+		return headers;
+	}
+
 	public static void authUser(RequestContext ctx) {
 		HttpServletRequest request = ctx.getRequest();
 		Map<String, String> header = httpRequestToMap(request);
