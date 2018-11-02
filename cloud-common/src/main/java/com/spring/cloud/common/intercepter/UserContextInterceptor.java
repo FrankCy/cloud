@@ -1,8 +1,8 @@
 package com.spring.cloud.common.intercepter;
 
-import cn.springcloud.book.common.context.UserContextHolder;
-import cn.springcloud.book.common.util.HttpConvertUtil;
-import cn.springcloud.book.common.vo.User;
+import com.spring.cloud.common.context.UserContextHolder;
+import com.spring.cloud.common.util.HttpConvertUtil;
+import com.spring.cloud.common.vo.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.util.StringUtils;

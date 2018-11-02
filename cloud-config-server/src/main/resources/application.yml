@@ -10,4 +10,4 @@ spring:
           #password:
           search-paths: SC-BOOK-CONFIG
   application:
-    name: sc-configserver
+    name: cloud-config-server

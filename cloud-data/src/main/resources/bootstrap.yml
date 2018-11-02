@@ -9,4 +9,4 @@ spring:
       name: config-info
       profile: dev
   application:
-    name: sc-data-service
+    name: cloud-data-server

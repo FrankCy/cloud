@@ -16,7 +16,7 @@ public class ZuulFallback implements FallbackProvider{
 
 	@Override
 	public String getRoute() {
-		//可以配置指定的路由，值为serviceId，如sc-user-service
+		//可以配置指定的路由，值为serviceId，如cloud-client-server
 		return "*";
 	}
 

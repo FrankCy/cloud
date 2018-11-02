@@ -32,7 +32,7 @@ public class UserService implements IUserService {
 
 	@Override
 	public List<String> getProviderData() {
-		List<String> result = restTemplate.getForObject("http://sc-data-service/getProviderData", List.class);
+		List<String> result = restTemplate.getForObject("http://cloud-data-server/getProviderData", List.class);
 		return result;
 	}
 }

@@ -1,6 +1,6 @@
 spring:
   application:
-    name: sc-data-service
+    name: cloud-data-server
 eureka:
   client:
     serviceUrl:

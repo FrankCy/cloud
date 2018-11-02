@@ -12,6 +12,7 @@
     <groupId>spring-cloud-2</groupId>
     <artifactId>cloud</artifactId>
     <packaging>pom</packaging>
+    <name>cloud</name>
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>cloud-eureka-server</module>
@@ -43,7 +44,6 @@
     </dependencies>
 
     <dependencyManagement>
-
         <dependencies>
             <dependency>
                 <groupId>org.springframework.cloud</groupId>

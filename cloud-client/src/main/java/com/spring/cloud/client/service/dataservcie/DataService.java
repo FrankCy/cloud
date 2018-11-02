@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * @author yang.chang
  *
  */
-@FeignClient(name = "sc-data-service", fallback= UserClientFallback.class)
+@FeignClient(name = "cloud-data-server", fallback= UserClientFallback.class)
 public interface DataService {
 	
 	@RequestMapping(value = "/getDefaultUser", method = RequestMethod.GET)

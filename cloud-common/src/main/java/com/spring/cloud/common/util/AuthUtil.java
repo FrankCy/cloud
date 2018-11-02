@@ -1,6 +1,6 @@
 package com.spring.cloud.common.util;
 
-import cn.springcloud.book.common.vo.User;
+import com.spring.cloud.common.vo.User;
 import org.springframework.util.StringUtils;
 
 import javax.servlet.http.HttpServletResponse;

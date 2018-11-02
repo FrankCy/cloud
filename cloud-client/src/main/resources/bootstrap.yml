@@ -8,5 +8,5 @@ spring:
       name: config-info
       profile: dev
   application:
-    name: sc-user-service
+    name: cloud-client-server
 

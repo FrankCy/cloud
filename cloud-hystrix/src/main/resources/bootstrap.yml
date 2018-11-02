@@ -8,4 +8,4 @@ spring:
       name: config-info
       profile: dev
   application:
-    name: sc-hystrix-dashboard
+    name: cloud-hystrix-dashboard

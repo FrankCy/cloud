@@ -12,5 +12,5 @@ management:
       exposure:
         include: hystrix.stream
 turbine:
-  appConfig: sc-user-service,sc-zuul-service,sc-data-service
+  appConfig: cloud-client-server,cloud-zuul-server,cloud-data-server
   clusterNameExpression: "'default'"

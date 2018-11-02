@@ -6,7 +6,6 @@
     <groupId>spring-cloud-2</groupId>
     <artifactId>cloud-zuul</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>jar</packaging>
 
     <name>cloud-zuul</name>
     <description>Demo project for Spring Boot</description>
@@ -17,6 +16,9 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
 
     <dependencies>
         <dependency>
