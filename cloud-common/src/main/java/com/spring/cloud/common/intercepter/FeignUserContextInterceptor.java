@@ -10,7 +10,7 @@ import java.util.Enumeration;
 
 /**
  *  Feign传递用户上下文
- *  @author zhudeming
+ *  @author yang.chang
  */
 public class FeignUserContextInterceptor implements RequestInterceptor {
 

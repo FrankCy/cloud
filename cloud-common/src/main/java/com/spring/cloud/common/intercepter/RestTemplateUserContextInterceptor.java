@@ -12,7 +12,7 @@ import java.util.Map;
 
 /**
  * RestTemplate传递用户上下文
- * @author zhudeming
+ * @author yang.chang
  */
 public class RestTemplateUserContextInterceptor implements ClientHttpRequestInterceptor {
 

@@ -4,7 +4,7 @@ import com.spring.cloud.common.vo.User;
 
 /**
  * 用户上下文
- * @author zhudeming
+ * @author yang.chang
  */
 public class UserContextHolder {
 	

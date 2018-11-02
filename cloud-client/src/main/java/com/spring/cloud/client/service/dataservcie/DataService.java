@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
  * feign调用数据服务
- * @author zhudeming
+ * @author yang.chang
  *
  */
 @FeignClient(name = "sc-data-service", fallback= UserClientFallback.class)
