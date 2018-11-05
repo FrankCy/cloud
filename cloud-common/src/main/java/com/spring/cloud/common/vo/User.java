@@ -49,7 +49,9 @@ public class User implements Serializable {
 	}
 
 	public User(Map<String, String> headers) {
-		userId = headers.get(CONTEXT_KEY_USERID);
+//		userId = headers.get(CONTEXT_KEY_USERID);
+		userId = headers.get("userid");
+		userName = headers.get("username");
 	}
 	
 

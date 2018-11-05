@@ -12,6 +12,14 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ * @description：用户上下文拦截器
+ * @version 1.0
+ * @author: Yang.Chang
+ * @email: cy880708@163.com
+ * @date: 2018/11/5 上午11:40
+ * @mofified By:
+ */
 public class UserContextInterceptor implements HandlerInterceptor {
 	private static final Logger log = LoggerFactory.getLogger(UserContextInterceptor.class);
 	
