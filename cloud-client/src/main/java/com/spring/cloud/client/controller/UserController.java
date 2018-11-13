@@ -74,10 +74,10 @@ public class UserController {
      * @date: 2018/11/13 下午4:28
      * @mofified By:
      */
-    @GetMapping("/hello")
+    @GetMapping("/redisTest")
     public String sayHi(@RequestParam String name) {
 
-        //从缓存中获取城市信息
+        //从缓存中获取名字
         String key = name;
         ValueOperations<String, String> operations = redisTemplate.opsForValue();
         //缓存存在
