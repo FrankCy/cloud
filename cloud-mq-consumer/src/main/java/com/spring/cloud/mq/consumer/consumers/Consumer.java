@@ -1,6 +1,5 @@
 package com.spring.cloud.mq.consumer.consumers;
 
-
 import com.spring.cloud.common.util.date.DateUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.jms.annotation.JmsListener;

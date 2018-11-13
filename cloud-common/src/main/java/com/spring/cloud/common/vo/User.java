@@ -5,7 +5,6 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
-
 /**
  * 用户对象
  * @author yang.chang
