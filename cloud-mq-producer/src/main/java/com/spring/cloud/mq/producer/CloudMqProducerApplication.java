@@ -8,6 +8,14 @@ import org.springframework.context.annotation.Bean;
 
 import javax.jms.Queue;
 
+/**
+ * @description：队列启动
+ * @version 1.0
+ * @author: Yang.Chang
+ * @email: cy880708@163.com
+ * @date: 2018/11/13 下午2:57
+ * @mofified By:
+ */
 @Slf4j
 @SpringBootApplication
 public class CloudMqProducerApplication {
