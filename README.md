@@ -13,6 +13,8 @@ cloud-data|8099|数据服务，提供基础的数据
 cloud-eureka-server|8761|注册中心
 cloud-hystrix|9099|hystrix dashboard& Turbine
 cloud-zuul|7777|API GateWay
+cloud-mq-producer|8077|ActiveMQ服务端
+cloud-mq-consumer|8078|ActiveMQ消费端
 
 ### 示例图 ###
 [Eureka + Ribbon + Config + Zuul + Hystrix 示例图点击查看](https://images.hzmedia.com.cn/xiandu/springcloud_921/Images/t10-1.jpg?v=20180921165736)
@@ -28,12 +30,14 @@ cloud-zuul|7777|API GateWay
 网关
 - Hystrix <br/>
 熔断器
+- ActiveMq <br/>
+消息队列
 
 ### 项目地址 ###
 [GitHub](https://github.com/FrankCy/cloud.git)
 
 ### 启动说明 ###
-- 顺序 <br/>
+- 建议流程启动顺序 <br/>
 cloud-eureka-server -> cloud-zuul -> cloud-data -> cloud-client
 
 
