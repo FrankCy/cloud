@@ -2,7 +2,8 @@ package com.spring.cloud.client.controller;
 
 
 import com.spring.cloud.client.service.IUserService;
-import com.spring.cloud.common.vo.ReqTest;
+import com.spring.cloud.common.vo.User;
+import com.sun.tools.corba.se.idl.InterfaceGen;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +11,6 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -61,30 +61,9 @@ public class UserController {
      * @date: 2018/11/13 下午4:27
      * @mofified By:
      */
-    @RequestMapping(value = "/add")
-//    public String add(HttpServletRequest request) {
-//    public String add(ReqTest reqTest) {
-//    public String add(Integer page, Integer rows) {
-    public String add(@RequestParam(value = "page", defaultValue = "0", required = false) Integer page,
-                      @RequestParam(value = "rows", defaultValue = "0", required = false) Integer rows) {
-
-//        Integer page = reqTest.getPage();
-//        Integer rows = reqTest.getRows();
-//        String userid = reqTest.getUserid();
-
-//        Integer page = request.getParameter("page") == null ? 0 : Integer.parseInt(request.getParameter("page"));
-//        Integer rows = request.getParameter("rows") == null ? 0 : Integer.parseInt(request.getParameter("rows"));
-//        String userid = request.getParameter("userid") ;
-
-        Integer sum;
-        if(page == null || rows == null) {
-            return "缺少参数";
-        } else {
-            sum = page + rows;
-            logger.info("/add, result:" + sum);
-        }
-
-        return "相加的值是："  + sum.toString();
+    @RequestMapping(value = "/add" ,method=RequestMethod.GET)
+    public String add(@RequestParam("page") Integer page, @RequestParam("rows") Integer rows ) {
+        return "page："  + page + " —— rows :" + rows;
     }
 
     /**
@@ -98,7 +77,6 @@ public class UserController {
     @GetMapping("/hello")
     public String sayHi(@RequestParam String name) {
 
-
         //从缓存中获取城市信息
         String key = name;
         ValueOperations<String, String> operations = redisTemplate.opsForValue();
@@ -106,15 +84,14 @@ public class UserController {
         boolean hasKey = redisTemplate.hasKey(key);
         if (hasKey) {
             String userName = operations.get(key);
-            logger.info(" 从缓存中获取了姓名 >> " + userName);
-            return userName;
+            logger.info(" get redis username >> " + userName);
+            return "get username " + userName;
+        } else {
+            //初始化缓存
+            operations.set(key, name, 10, TimeUnit.SECONDS);
+            logger.info(" set redis username >>  " + name);
+            return " set username: " + name;
         }
-        //缓存不存在，将数据存入缓存
-        operations.set(key, name, 10, TimeUnit.SECONDS);
-        logger.info("CityServiceImpl.findCityById() : 城市插入缓存 >>  " + name);
-
-        return " Welcome: " + name;
-
     }
 
 }
