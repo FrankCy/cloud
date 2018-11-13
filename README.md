@@ -16,22 +16,20 @@ cloud-zuul|7777|API GateWay
 cloud-mq-producer|8077|ActiveMQ服务端
 cloud-mq-consumer|8078|ActiveMQ消费端
 
+### 技术栈 ###
+技术|版本|应用场景
+---|:--:|---:
+Spring Boot|2.0.3.RELEASE|基础平台
+Spring Cloud Dependencies|Finchley.RELEASE|基础平台
+Eureka|N/A|注册中心
+Ribbon|N/A|客户端负载均衡
+Config|N/A|配置中心
+Zuul|N/A|网关
+Hystrix|N/A|熔断器
+ActiveMq|N/A|消息毒烈
+
 ### 示例图 ###
 [Eureka + Ribbon + Config + Zuul + Hystrix 示例图点击查看](https://images.hzmedia.com.cn/xiandu/springcloud_921/Images/t10-1.jpg?v=20180921165736)
-
-### 组件列表 ###
-- Eureka <br/>
-注册中心
-- Ribbon <br/>
-客户端负载均衡
-- Config <br/>
-配置中心
-- Zuul <br/>
-网关
-- Hystrix <br/>
-熔断器
-- ActiveMq <br/>
-消息队列
 
 ### 项目地址 ###
 [GitHub](https://github.com/FrankCy/cloud.git)
@@ -40,5 +38,13 @@ cloud-mq-consumer|8078|ActiveMQ消费端
 - 建议流程启动顺序 <br/>
 cloud-eureka-server -> cloud-zuul -> cloud-data -> cloud-client
 
+- 请求拦截 <br/>
+请求：[http://localhost:9091/add](http://localhost:9091/add) <br/>
+系统并未响应任何信息，查看控制台报错<br/>
+```the user is null, please access from gateway or check user info``` <br/>
+这说明拦截器起到了作用，对于没有用户信息这样不合法的请求进行了拦截<br/>
+再请求：[http://localhost:7777/cloud-client-server/getContextUserId](http://localhost:7777/cloud-client-server/getContextUserId) <br/>
+```{"businessId":1,"exceptionType":"com.spring.cloud.common.exception.BaseException","code":10001,"businessMessage":"the user is null, please check","codeEN":"AuthEmptyError"}``` <br/>
+这是自定义了一个异常，没有传用户信息，因为这里在网关做了拦截，如果请求头里没有x-customs-user则鉴权不通过
 
-
+**邮箱：*changyang@baidajinrong.com*
