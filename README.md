@@ -52,5 +52,7 @@ Client(Controller) --> Client(Services) 这里@Autowired DataService --> DataSer
 - redis缓存demo <br/>
 [http://localhost:7777/cloud-client-server/redisTest](http://localhost:7777/cloud-client-server/redisTest)
 
+- activemq队列demo <br/>
+[http://localhost:8077//producer/send](http://localhost:8077//producer/send)请求放入队列
 
 **邮箱：*changyang@baidajinrong.com*

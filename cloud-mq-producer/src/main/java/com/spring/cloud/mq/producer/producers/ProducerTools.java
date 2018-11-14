@@ -40,9 +40,6 @@ public class ProducerTools {
      * @mofified By:
      */
     public void send() {
-        //修改投资表
-        //修改用户信息
-        //修改余额
         System.out.println(DateUtils.getDate() + " ： 客户端创建的队列");
         this.jmsMessagingTemplate.convertAndSend(this.queue, "hi,客户端创建的队列");
     }
