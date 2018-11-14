@@ -17,7 +17,7 @@ public class User implements Serializable {
 	 */
 	private static final long serialVersionUID = -4083327605430665846L;
 
-	public final static String CONTEXT_KEY_USERID = "x-customs-user";
+	public final static String CONTEXT_KEY_USERID = "user_key";
 
 	/**
 	 * 用户ID

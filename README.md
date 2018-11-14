@@ -45,7 +45,12 @@ cloud-eureka-server -> cloud-zuul -> cloud-data -> cloud-client
 这说明拦截器起到了作用，对于没有用户信息这样不合法的请求进行了拦截<br/>
 再请求：[http://localhost:7777/cloud-client-server/getContextUserId](http://localhost:7777/cloud-client-server/getContextUserId) <br/>
 ```{"businessId":1,"exceptionType":"com.spring.cloud.common.exception.BaseException","code":10001,"businessMessage":"the user is null, please check","codeEN":"AuthEmptyError"}``` <br/>
-这是自定义了一个异常，没有传用户信息，因为这里在网关做了拦截，如果请求头里没有x-customs-user则鉴权不通过<br/><br/>
+这是自定义了一个异常，没有传用户信息，因为这里在网关做了拦截，如果请求头里没有user_key则鉴权不通过<br/><br/>
 Client(Controller) --> Client(Services) 这里@Autowired DataService --> DataService通过注解@FeignClient（name = "cloud-data-server", fallback= UserClientFallback.class 指向了cloud-data-server下的函数，"fallback"指向如果无法响应时的熔断器）
+- 即：在请求服务器时必须传递user_key
+
+- redis缓存demo <br/>
+[http://localhost:7777/cloud-client-server/redisTest](http://localhost:7777/cloud-client-server/redisTest)
+
 
 **邮箱：*changyang@baidajinrong.com*

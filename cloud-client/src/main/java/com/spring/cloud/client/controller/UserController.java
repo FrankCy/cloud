@@ -2,8 +2,6 @@ package com.spring.cloud.client.controller;
 
 
 import com.spring.cloud.client.service.IUserService;
-import com.spring.cloud.common.vo.User;
-import com.sun.tools.corba.se.idl.InterfaceGen;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,7 +52,7 @@ public class UserController {
     }
 
     /**
-     * @description：添加缓存
+     * @description：接口请求
      * @version 1.0
      * @author: Yang.Chang
      * @email: cy880708@163.com
@@ -77,18 +75,18 @@ public class UserController {
     @GetMapping("/redisTest")
     public String sayHi(@RequestParam String name) {
 
+        String nkName = "nk:"+name;
         //从缓存中获取名字
-        String key = name;
         ValueOperations<String, String> operations = redisTemplate.opsForValue();
         //缓存存在
-        boolean hasKey = redisTemplate.hasKey(key);
+        boolean hasKey = redisTemplate.hasKey(nkName);
         if (hasKey) {
-            String userName = operations.get(key);
+            String userName = operations.get(nkName);
             logger.info(" get redis username >> " + userName);
             return "get username " + userName;
         } else {
-            //初始化缓存
-            operations.set(key, name, 10, TimeUnit.SECONDS);
+            //初始化缓存（有效期10s）
+            operations.set(nkName, name, 10, TimeUnit.SECONDS);
             logger.info(" set redis username >>  " + name);
             return " set username: " + name;
         }
