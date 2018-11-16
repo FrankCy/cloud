@@ -1,6 +1,7 @@
 package com.spring.cloud.data.controller;
 
 import com.spring.cloud.common.context.UserContextHolder;
+import com.spring.cloud.common.po.Company;
 import com.spring.cloud.data.config.DataConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -41,7 +42,13 @@ public class DataController {
 
     @GetMapping("/insertCompany")
     public String insertCompany(){
-    	return "新增";
+        Company company = new Company();
+        company.setcName("测试用户");
+        company.setcCode("测试编码");
+        company.setcDes("测试描述");
+        int i = dataConfig.insertCompany(company);
+        System.out.println("i : " + i);
+    	return "创建成功 ： " + i;
     }
 
     @GetMapping("/findAllCompany")
