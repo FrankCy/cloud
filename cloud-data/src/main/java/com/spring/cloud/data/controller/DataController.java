@@ -4,6 +4,8 @@ import com.spring.cloud.common.context.UserContextHolder;
 import com.spring.cloud.data.config.DataConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
@@ -36,5 +38,14 @@ public class DataController {
     	provider.add("Shenzhen Company");
         return provider;
     }
-    
+
+    @GetMapping("/insertCompany")
+    public String insertCompany(){
+    	return "新增";
+    }
+
+    @GetMapping("/findAllCompany")
+    public String findAllCompany(){
+        return "查询数据";
+    }
 }

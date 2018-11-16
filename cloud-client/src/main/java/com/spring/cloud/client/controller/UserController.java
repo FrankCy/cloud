@@ -2,6 +2,8 @@ package com.spring.cloud.client.controller;
 
 
 import com.spring.cloud.client.service.IUserService;
+import com.spring.cloud.client.service.company.CompanyService;
+import com.spring.cloud.common.po.Company;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +25,9 @@ public class UserController {
 
 	@Autowired
     protected RedisTemplate redisTemplate;
+
+	@Autowired
+    protected CompanyService companyService;
 	
 	/**
 	 * 获取配置文件中系统默认用户
@@ -90,6 +95,19 @@ public class UserController {
             logger.info(" set redis username >>  " + name);
             return " set username: " + name;
         }
+    }
+
+    /**
+     * @description：新增用户信息x
+     * @version 1.0
+     * @author: Yang.Chang
+     * @email: cy880708@163.com
+     * @date: 2018/11/14 下午1:52
+     * @mofified By:
+     */
+    @GetMapping(value = "/insertCompany")
+    public String insertCompany(Company company) {
+        return companyService.insertCompany(company);
     }
 
 }
