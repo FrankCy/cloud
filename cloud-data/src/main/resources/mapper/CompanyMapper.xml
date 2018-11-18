@@ -6,7 +6,7 @@
     </sql>
 
     <sql id="BASE_COLUMN">
-      c_id,c_name,c_des,c_code
+      c_id,cName,cDes,cCode
     </sql>
 
     <insert id="insertCompany" parameterType="com.spring.cloud.common.po.Company">

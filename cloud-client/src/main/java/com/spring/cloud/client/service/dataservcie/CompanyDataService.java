@@ -1,6 +1,7 @@
 package com.spring.cloud.client.service.dataservcie;
 
 import com.spring.cloud.client.service.fallback.CompanyClientFallback;
+import com.spring.cloud.common.vo.CompanyUser;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -19,7 +20,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public interface CompanyDataService {
 
     @RequestMapping(value = "/insertCompany", method = RequestMethod.GET)
-    String insertCompany();
+    String insertCompany(CompanyUser companyUser);
 
     @RequestMapping(value = "/findAllCompany", method = RequestMethod.GET)
     String findAllCompany();

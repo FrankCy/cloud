@@ -26,7 +26,9 @@ Ribbon|N/A|客户端负载均衡
 Config|N/A|配置中心
 Zuul|N/A|网关
 Hystrix|N/A|熔断器
-ActiveMq|N/A|消息毒烈
+ActiveMq|N/A|消息队列
+Mybatis|N/A|数据库中间件
+PageHelper|N/A|分页控件
 
 ### 示例图 ###
 [Eureka + Ribbon + Config + Zuul + Hystrix 示例图点击查看](https://images.hzmedia.com.cn/xiandu/springcloud_921/Images/t10-1.jpg?v=20180921165736)
@@ -55,4 +57,4 @@ Client(Controller) --> Client(Services) 这里@Autowired DataService --> DataSer
 - activemq队列demo <br/>
 [http://localhost:8077//producer/send](http://localhost:8077//producer/send)请求放入队列
 
-**邮箱：*changyang@baidajinrong.com*
+邮箱：*changyang@baidajinrong.com*

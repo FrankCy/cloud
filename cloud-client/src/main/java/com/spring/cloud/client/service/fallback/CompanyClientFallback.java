@@ -1,6 +1,7 @@
 package com.spring.cloud.client.service.fallback;
 
 import com.spring.cloud.client.service.dataservcie.CompanyDataService;
+import com.spring.cloud.common.vo.CompanyUser;
 import org.springframework.stereotype.Component;
 
 /**
@@ -18,7 +19,7 @@ import org.springframework.stereotype.Component;
 public class CompanyClientFallback implements CompanyDataService {
 
     @Override
-    public String insertCompany() {
+    public String insertCompany(CompanyUser companyUser) {
         return new String("新增公司信息失败！FeignClient");
     }
 

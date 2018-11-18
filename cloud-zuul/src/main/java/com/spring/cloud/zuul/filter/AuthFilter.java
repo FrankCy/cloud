@@ -32,7 +32,7 @@ public class AuthFilter extends ZuulFilter {
 	public Object run() {
 		RequestContext rc = RequestContext.getCurrentContext();
 		authUser(rc);
-		return null;
+		return rc;
 	}
 
 	@Override

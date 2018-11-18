@@ -2,13 +2,13 @@ package com.spring.cloud.data.controller;
 
 import com.spring.cloud.common.context.UserContextHolder;
 import com.spring.cloud.common.po.Company;
+import com.spring.cloud.common.vo.CompanyUser;
 import com.spring.cloud.data.config.DataConfig;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,12 +40,18 @@ public class DataController {
         return provider;
     }
 
-    @GetMapping("/insertCompany")
-    public String insertCompany(){
+    @RequestMapping(value = "/insertCompany", method = RequestMethod.GET)
+    public String insertCompany(CompanyUser companyUser, HttpServletRequest request){
+        String token = request.getHeader("oauthToken");
+        System.out.println("insertCompany token : " + token);
+
         Company company = new Company();
-        company.setcName("测试用户");
-        company.setcCode("测试编码");
-        company.setcDes("测试描述");
+//        company.setcName("测试用户");
+//        company.setcCode("测试编码");
+//        company.setcDes("测试描述");
+
+        //将VO内相同的值放到PO内
+        BeanUtils.copyProperties(company, companyUser);
         int i = dataConfig.insertCompany(company);
         System.out.println("i : " + i);
     	return "创建成功 ： " + i;

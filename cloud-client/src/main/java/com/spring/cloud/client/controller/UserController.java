@@ -3,7 +3,8 @@ package com.spring.cloud.client.controller;
 
 import com.spring.cloud.client.service.IUserService;
 import com.spring.cloud.client.service.company.CompanyService;
-import com.spring.cloud.common.po.Company;
+import com.spring.cloud.common.vo.CompanyUser;
+import io.swagger.annotations.ApiParam;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -105,9 +106,16 @@ public class UserController {
      * @date: 2018/11/14 下午1:52
      * @mofified By:
      */
-    @GetMapping(value = "/insertCompany")
-    public String insertCompany(Company company) {
-        return companyService.insertCompany(company);
+    @RequestMapping(value = "/insertCompany", method = RequestMethod.POST)
+//    public String addUser( @RequestBody @ApiParam(name="公司",value="传入json格式",required=true) CompanyUser companyUser){
+    public String addUser(CompanyUser companyUser){
+        System.out.println("userName : " + companyUser.getUserName());
+        System.out.println("companyCode : " + companyUser.getcCode());
+        System.out.println("companyName : " + companyUser.getcName());
+        System.out.println("companyDes : " + companyUser.getcDes());
+        return companyService.insertCompany(companyUser);
     }
+
+
 
 }

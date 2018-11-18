@@ -4,6 +4,7 @@ import com.github.pagehelper.PageInfo;
 import com.spring.cloud.client.service.company.CompanyService;
 import com.spring.cloud.client.service.dataservcie.CompanyDataService;
 import com.spring.cloud.common.po.Company;
+import com.spring.cloud.common.vo.CompanyUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,8 +25,8 @@ public class CompanyServiceImpl implements CompanyService {
     private CompanyDataService companyDataService;
 
     @Override
-    public String insertCompany(Company company) {
-        return companyDataService.insertCompany();
+    public String insertCompany(CompanyUser companyUser) {
+        return companyDataService.insertCompany(companyUser);
     }
 
     @Override

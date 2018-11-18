@@ -2,6 +2,7 @@ package com.spring.cloud.client.service.company;
 
 import com.github.pagehelper.PageInfo;
 import com.spring.cloud.common.po.Company;
+import com.spring.cloud.common.vo.CompanyUser;
 
 /**
  * @version 1.0
@@ -18,13 +19,13 @@ public interface CompanyService {
     /**
      * @description：创建公司信息
      * @version 1.0
-     * @param company 公司实体对象
+     * @param companyUser 公司实体对象
      * @author: Yang.Chang
      * @email: cy880708@163.com
      * @date: 2018/11/15 下午1:50
      * @mofified By:
      */
-    String insertCompany(Company company);
+    String insertCompany(CompanyUser companyUser);
 
     /**
      * @description：查询公司信息
