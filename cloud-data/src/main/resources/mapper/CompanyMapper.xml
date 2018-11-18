@@ -13,9 +13,9 @@
         INSERT INTO
         <include refid="BASE_TABLE"/>
         <trim prefix="(" suffix=")" suffixOverrides=",">
-            c_name,cDes,
+            c_name,c_des,
             <if test="cCode != null">
-                cCode,
+                c_code,
             </if>
         </trim>
         <trim prefix="VALUES(" suffix=")" suffixOverrides=",">

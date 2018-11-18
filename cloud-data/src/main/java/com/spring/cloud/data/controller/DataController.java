@@ -51,7 +51,7 @@ public class DataController {
 //        company.setcDes("测试描述");
 
         //将VO内相同的值放到PO内
-        BeanUtils.copyProperties(company, companyUser);
+        BeanUtils.copyProperties(companyUser, company);
         int i = dataConfig.insertCompany(company);
         System.out.println("i : " + i);
     	return "创建成功 ： " + i;
