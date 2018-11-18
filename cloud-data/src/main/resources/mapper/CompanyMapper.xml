@@ -6,16 +6,16 @@
     </sql>
 
     <sql id="BASE_COLUMN">
-      c_id,cName,cDes,cCode
+      c_id,c_name,c_des,c_code
     </sql>
 
     <insert id="insertCompany" parameterType="com.spring.cloud.common.po.Company">
         INSERT INTO
         <include refid="BASE_TABLE"/>
         <trim prefix="(" suffix=")" suffixOverrides=",">
-            c_name,c_des,
+            c_name,cDes,
             <if test="cCode != null">
-                c_code,
+                cCode,
             </if>
         </trim>
         <trim prefix="VALUES(" suffix=")" suffixOverrides=",">
