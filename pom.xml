@@ -23,6 +23,7 @@
         <module>cloud-client</module>
         <module>cloud-mq-producer</module>
         <module>cloud-mq-consumer</module>
+        <module>cloud-hystrix</module>
     </modules>
 
     <properties>
