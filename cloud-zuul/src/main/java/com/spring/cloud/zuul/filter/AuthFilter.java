@@ -3,6 +3,7 @@ package com.spring.cloud.zuul.filter;
 import com.alibaba.fastjson.JSONObject;
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
+import com.netflix.zuul.exception.ZuulException;
 import com.spring.cloud.common.exception.BaseException;
 import com.spring.cloud.common.exception.BaseExceptionBody;
 import com.spring.cloud.common.exception.CommonError;
@@ -37,6 +38,10 @@ public class AuthFilter extends ZuulFilter {
 
 	@Override
 	public String filterType() {
+//		pre：可以在请求被路由之前调用
+//		route：在路由请求时候被调用
+//		post：在route和error过滤器之后被调用
+//		error：处理请求时发生错误时被调用
 		return "pre";
 	}
 
@@ -55,6 +60,14 @@ public class AuthFilter extends ZuulFilter {
 		return headers;
 	}
 
+	/**
+	 * @description：验证用户信息
+	 * @version 1.0
+	 * @author: Yang.Chang
+	 * @email: cy880708@163.com
+	 * @date: 2018/11/19 下午2:00
+	 * @mofified By:
+	 */
 	public static void authUser(RequestContext ctx) {
 		HttpServletRequest request = ctx.getRequest();
 		Map<String, String> header = httpRequestToMap(request);
@@ -70,9 +83,11 @@ public class AuthFilter extends ZuulFilter {
 				logger.error("println message error",e);
 			}
 		}else {
-			for (Map.Entry<String, String> entry : header.entrySet()) {
-				ctx.addZuulRequestHeader(entry.getKey(), entry.getValue());
-			}
+			return;
+//			坑
+//			for (Map.Entry<String, String> entry : header.entrySet()) {
+//				ctx.addZuulRequestHeader(entry.getKey(), entry.getValue());
+//			}
 		}
 	}
 	

@@ -2,9 +2,6 @@ package com.spring.cloud.client.controller;
 
 
 import com.spring.cloud.client.service.IUserService;
-import com.spring.cloud.client.service.company.CompanyService;
-import com.spring.cloud.common.vo.CompanyUser;
-import io.swagger.annotations.ApiParam;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +11,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-
 
 @RestController
 public class UserController {
@@ -26,9 +22,6 @@ public class UserController {
 
 	@Autowired
     protected RedisTemplate redisTemplate;
-
-	@Autowired
-    protected CompanyService companyService;
 	
 	/**
 	 * 获取配置文件中系统默认用户
@@ -97,25 +90,4 @@ public class UserController {
             return " set username: " + name;
         }
     }
-
-    /**
-     * @description：新增用户信息x
-     * @version 1.0
-     * @author: Yang.Chang
-     * @email: cy880708@163.com
-     * @date: 2018/11/14 下午1:52
-     * @mofified By:
-     */
-    @RequestMapping(value = "/insertCompany", method = RequestMethod.POST)
-//    public String addUser( @RequestBody @ApiParam(name="公司",value="传入json格式",required=true) CompanyUser companyUser){
-    public String addUser(CompanyUser companyUser){
-        System.out.println("userName : " + companyUser.getUserName());
-        System.out.println("companyCode : " + companyUser.getcCode());
-        System.out.println("companyName : " + companyUser.getcName());
-        System.out.println("companyDes : " + companyUser.getcDes());
-        return companyService.insertCompany(companyUser);
-    }
-
-
-
 }

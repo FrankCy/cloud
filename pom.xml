@@ -16,8 +16,6 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>cloud-eureka-server</module>
-        <module>cloud-consul-client</module>
-        <module>cloud-consul-server</module>
         <module>cloud-config-server</module>
         <module>cloud-common</module>
         <module>cloud-zuul</module>
