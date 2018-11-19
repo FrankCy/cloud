@@ -11,6 +11,14 @@ import org.springframework.util.StringUtils;
 import java.io.IOException;
 import java.util.*;
 
+/**
+ * @description：Feign拦截器
+ * @version 1.0
+ * @author: Yang.Chang
+ * @email: cy880708@163.com
+ * @date: 2018/11/19 下午4:12
+ * @mofified By:
+ */
 @Component
 public class FeignRequestInterceptor implements RequestInterceptor {
 

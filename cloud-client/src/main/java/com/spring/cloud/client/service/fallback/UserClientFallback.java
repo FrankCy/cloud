@@ -5,6 +5,12 @@ import com.spring.cloud.client.service.dataservcie.DataService;
 import org.springframework.stereotype.Component;
 
 /**
+ * @description：用户客户端熔断器
+ * @version 1.0
+ * @author: Yang.Chang
+ * @email: cy880708@163.com
+ * @date: 2018/11/19 下午4:12
+ * @mofified By:
  */
 @Component
 public class UserClientFallback implements DataService {

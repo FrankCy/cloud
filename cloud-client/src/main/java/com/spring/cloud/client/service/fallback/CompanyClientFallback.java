@@ -10,7 +10,6 @@ import org.springframework.stereotype.Component;
  * @author: Yang.Chang
  * @project: cloud
  * @package: com.spring.cloud.client.service.fallback
- * @params: ${PARAMS}
  * @email: cy880708@163.com
  * @date: 2018/11/15 下午6:45
  * @mofified By:

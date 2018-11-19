@@ -46,7 +46,6 @@ public class PostFilter extends ZuulFilter {
     @Override
     public Object run() throws ZuulException {
         try {
-            System.out.println("Post Zuul");
             RequestContext context = getCurrentContext();
             InputStream stream = context.getResponseDataStream();
             String body = StreamUtils.copyToString(stream, Charset.forName("GBK"));
