@@ -24,6 +24,9 @@
         <module>cloud-mq-producer</module>
         <module>cloud-mq-consumer</module>
         <module>cloud-hystrix</module>
+        <module>cloud-eureka-server-admin</module>
+        <module>cloud-eureka-server-pc</module>
+        <module>cloud-eureka-server-app</module>
     </modules>
 
     <properties>

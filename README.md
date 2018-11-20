@@ -52,6 +52,15 @@ Client(Controller) --> Client(Services) 这里@Autowired DataService --> DataSer
 - 即：在请求服务器时必须传递user_key / userid （这里我设置了需要传递这些参数）
 
 - demo (新增一个公司信息) <br/>
+  + 新增公司表脚本 <br/>
+  ```
+  CREATE TABLE company(
+    c_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    c_name VARCHAR(255) NOT NULL ,
+    c_des VARCHAR(255) NOT NULL ,
+    c_code VARCHAR(255) NOT NULL
+  ) ENGINE=INNODB AUTO_INCREMENT=1000 DEFAULT CHARSET=utf8;
+  ```
 [http://localhost:7777/cloud-client-server/insertCompany](http://localhost:7777/cloud-client-server/insertCompany) <br/>
   + 请求头中必须要加 ```user_key和userid```，请```注意大小写```
 

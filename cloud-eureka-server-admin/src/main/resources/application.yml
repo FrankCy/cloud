@@ -1,0 +1,9 @@
+server:
+  port: 8762
+spring:
+  application:
+    name: cloud-eureka-server-admin
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false

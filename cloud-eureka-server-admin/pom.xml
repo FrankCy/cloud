@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>cloud-eureka-server</artifactId>
-    <name>cloud-eureka-server</name>
-    <!-- FIXME change it to the project's website -->
-    <url>http://www.example.com</url>
+    <artifactId>cloud-eureka-server-admin</artifactId>
+    <name>cloud-eureka-server-admin</name>
+    <description>Demo project for Spring Boot</description>
+
     <parent>
         <artifactId>cloud</artifactId>
         <groupId>spring-cloud-2</groupId>
@@ -33,4 +32,6 @@
             </plugin>
         </plugins>
     </build>
+
+
 </project>
