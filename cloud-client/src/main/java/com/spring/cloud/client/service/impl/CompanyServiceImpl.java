@@ -26,6 +26,7 @@ public class CompanyServiceImpl implements CompanyService {
 
     @Override
     public String insertCompany(CompanyUser companyUser) {
+        System.out.println("你好");
         return companyDataService.insertCompany(companyUser);
     }
 

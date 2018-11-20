@@ -21,6 +21,7 @@ import javax.servlet.http.HttpServletResponse;
  * @mofified By:
  */
 public class UserContextInterceptor implements HandlerInterceptor {
+
 	private static final Logger log = LoggerFactory.getLogger(UserContextInterceptor.class);
 	
 	@Override

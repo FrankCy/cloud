@@ -27,6 +27,7 @@ import static org.springframework.util.ReflectionUtils.rethrowRuntimeException;
  */
 @Configuration
 public class PostFilter extends ZuulFilter {
+
     @Override
     public String filterType() {
         return POST_TYPE;
@@ -48,7 +49,7 @@ public class PostFilter extends ZuulFilter {
         try {
             RequestContext context = getCurrentContext();
             InputStream stream = context.getResponseDataStream();
-            String body = StreamUtils.copyToString(stream, Charset.forName("GBK"));
+            String body = StreamUtils.copyToString(stream, Charset.forName("UTF-8"));
             context.setResponseBody("new body: "+body);
         }
         catch (IOException e) {

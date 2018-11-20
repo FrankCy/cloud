@@ -13,7 +13,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author: yang.chang
+ * @description：数据处理层
+ * @version 1.0
+ * @author: Yang.Chang
+ * @email: cy880708@163.com
+ * @date: 2018/11/20 上午11:08
+ * @mofified By:
  */
 @RestController
 public class DataController {
@@ -40,25 +45,4 @@ public class DataController {
         return provider;
     }
 
-    @RequestMapping(value = "/insertCompany", method = RequestMethod.GET)
-    public String insertCompany(CompanyUser companyUser, HttpServletRequest request){
-        String token = request.getHeader("oauthToken");
-        System.out.println("insertCompany token : " + token);
-
-        Company company = new Company();
-//        company.setcName("测试用户");
-//        company.setcCode("测试编码");
-//        company.setcDes("测试描述");
-
-        //将VO内相同的值放到PO内
-        BeanUtils.copyProperties(companyUser, company);
-        int i = dataConfig.insertCompany(company);
-        System.out.println("i : " + i);
-    	return "创建成功 ： " + i;
-    }
-
-    @GetMapping("/findAllCompany")
-    public String findAllCompany(){
-        return "查询数据";
-    }
 }

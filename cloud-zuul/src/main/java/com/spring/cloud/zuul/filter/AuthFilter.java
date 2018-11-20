@@ -21,10 +21,16 @@ import static org.springframework.cloud.netflix.zuul.filters.support.FilterConst
 import static org.springframework.cloud.netflix.zuul.filters.support.FilterConstants.PRE_TYPE;
 
 /**
- * 鉴权filter
+ * @description：鉴权filter
+ * @version 1.0
+ * @author: Yang.Chang
+ * @email: cy880708@163.com
+ * @date: 2018/11/20 上午11:21
+ * @mofified By:
  */
 @Configuration
 public class AuthFilter extends ZuulFilter {
+
 	private static final Logger logger = LoggerFactory.getLogger(AuthFilter.class);
 
 	@Override
@@ -89,6 +95,10 @@ public class AuthFilter extends ZuulFilter {
 			}
 		}else {
 			return;
+			// 用户Token验证 jwt ／ 将用户token放在redis
+			//
+
+
 //			坑
 //			for (Map.Entry<String, String> entry : header.entrySet()) {
 //				ctx.addZuulRequestHeader(entry.getKey(), entry.getValue());

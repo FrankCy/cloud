@@ -1,6 +1,5 @@
 package com.spring.cloud.data.config;
 
-import com.spring.cloud.common.po.Company;
 import com.spring.cloud.data.dao.CompanyDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -25,10 +24,6 @@ public class DataConfig {
 
 	public void setDefaultUser(String defaultUser) {
 		this.defaultUser = defaultUser;
-	}
-
-	public int insertCompany(Company company) {
-		return companyDao.insertCompany(company);
 	}
 
 }

@@ -19,6 +19,7 @@ public class UserClientFallback implements DataService {
 	public String getDefaultUser() {
 		return new String("get getDefaultUser failed");
 	}
+
 	@Override
 	public String getContextUserId() {
 		return new String("get getContextUserId failed");
