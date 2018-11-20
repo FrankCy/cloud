@@ -1,7 +1,7 @@
 ## Spring Cloud 2.0+ #
 #### 基于Spring Boot 2.0+ ####
 ### 简介 ####
-用户浏览器请求，经过浏览器，请求达到Nginx，打开前台界面，由前台发起请求后台数据，当请求达到Nginx后，Nginx对网关层进行负载，因为网关也需要做HA，此时网关接收到请求后会根据请求路径进行动态路由，根据服务名发现是UserService中的服务，则从Ribbon中选择一台UserService的实例进行调用，由UserService返回数据，如果此时UserService需要使用第三方DataService的数据，则跟Zuul一样，选择一台DataService的实例进行调用，返回数据到前台即可渲染页面，流程结束<br/>
+一个简单的Spring Cloud基础框架，集成config／Eureka／Hystrix／ActiveMQ等组件
 ### 工程介绍 ###
 工程|端口|描述
 ---|:--:|---:
@@ -51,10 +51,12 @@ cloud-eureka-server -> cloud-zuul -> cloud-data -> cloud-client
 Client(Controller) --> Client(Services) 这里@Autowired DataService --> DataService通过注解@FeignClient（name = "cloud-data-server", fallback= UserClientFallback.class 指向了cloud-data-server下的函数，"fallback"指向如果无法响应时的熔断器）
 - 即：在请求服务器时必须传递user_key / userid （这里我设置了需要传递这些参数）
 
+- demo (新增一个公司信息) <br/>
+[http://localhost:7777/cloud-client-server/insertCompany](http://localhost:7777/cloud-client-server/insertCompany) <br/>
+  + 请求头中必须要加 ```user_key和userid```，请```注意大小写```
+
 - redis缓存demo <br/>
 [http://localhost:7777/cloud-client-server/redisTest](http://localhost:7777/cloud-client-server/redisTest)
 
 - activemq队列demo <br/>
 [http://localhost:8077//producer/send](http://localhost:8077//producer/send)请求放入队列
-
-邮箱：*changyang@baidajinrong.com*
