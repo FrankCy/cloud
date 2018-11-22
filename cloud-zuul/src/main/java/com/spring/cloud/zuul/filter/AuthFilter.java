@@ -13,6 +13,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.util.StringUtils;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
@@ -28,7 +29,7 @@ import static org.springframework.cloud.netflix.zuul.filters.support.FilterConst
  * @date: 2018/11/20 上午11:21
  * @mofified By:
  */
-@Configuration
+//@Configuration
 public class AuthFilter extends ZuulFilter {
 
 	private static final Logger logger = LoggerFactory.getLogger(AuthFilter.class);
