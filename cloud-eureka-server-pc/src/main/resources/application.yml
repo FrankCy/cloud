@@ -1,9 +1,0 @@
-server:
-  port: 8764
-spring:
-  application:
-    name: cloud-eureka-server-pc
-eureka:
-  client:
-    registerWithEureka: false
-    fetchRegistry: false

@@ -11,9 +11,6 @@ cloud-common|N/A|公共组件
 cloud-config-server|9090|配置中心
 cloud-data|8099|数据服务，提供基础的数据
 cloud-eureka-server|8761|注册中心
-cloud-eureka-server-admin|8762|注册中心（Admin后台管理程序）
-cloud-eureka-server-app|8763|注册中心（APP应用）
-cloud-eureka-server-pc|8764|注册中心（PC应用）
 cloud-hystrix|9099|hystrix dashboard& Turbine
 cloud-zuul|7777|API GateWay
 cloud-mq-producer|8077|ActiveMQ服务端
