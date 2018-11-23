@@ -20,6 +20,7 @@
         <module>cloud-common</module>
         <module>cloud-zuul</module>
         <module>cloud-data</module>
+        <module>cloud-data-partner</module>
         <module>cloud-client</module>
         <module>cloud-mq-producer</module>
         <module>cloud-mq-consumer</module>

@@ -2,6 +2,7 @@ package com.spring.cloud.zuul.filter;
 
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.exception.ZuulException;
+import org.springframework.context.annotation.Configuration;
 
 import static org.springframework.cloud.netflix.zuul.filters.support.FilterConstants.POST_TYPE;
 import static org.springframework.cloud.netflix.zuul.filters.support.FilterConstants.PRE_DECORATION_FILTER_ORDER;
@@ -16,7 +17,7 @@ import static org.springframework.cloud.netflix.zuul.filters.support.FilterConst
  * @date: 2018/11/19 下午2:36
  * @mofified By:
  */
-//@Configuration
+@Configuration
 public class PostFilter extends ZuulFilter {
 
     @Override
