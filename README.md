@@ -7,6 +7,7 @@
 ---|:--:|---:
 cloud|N/A|父节点
 cloud-client|9091|用户服务
+cloud-client-admin|9092|后台管理程序
 cloud-common|N/A|公共组件
 cloud-config-server|9090|配置中心
 cloud-data|8099|数据服务，提供基础的数据
@@ -29,6 +30,7 @@ Hystrix|N/A|熔断器
 ActiveMq|N/A|消息队列
 Mybatis|N/A|数据库中间件
 PageHelper|N/A|分页控件
+LayUI|N/A|后台管理程序基础框架
 
 ### 示例图 ###
 [Eureka + Ribbon + Config + Zuul + Hystrix 示例图点击查看](https://images.hzmedia.com.cn/xiandu/springcloud_921/Images/t10-1.jpg?v=20180921165736)
