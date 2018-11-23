@@ -1,31 +1,29 @@
-##默认端口
-server:
-  port: 9092
-  servlet:
-    session:
-      ##默认session有效期
-      timeout: 10s
-  tomcat:
-    max-threads: 0
-    ##默认编码
-    uri-encoding: UTF-8
-
-spring:
-  mvc:
-    view:
-      ##默认前缀
-      prefix: /
-      ##默认后缀
-#      suffix: .html
-   ##关闭thymeleaf缓存
-#  thymeleaf:
-#    cache: false
-  freemarker:
-    cache: false
-    charset: UTF-8
-    check-template-location: true
-    content-type: text/html
-    expose-request-attributes: true
-    expose-session-attributes: true
-    request-context-attribute: request
-#    template-loader-path: classpath:/web/
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${eureka.host:127.0.0.1}:${eureka.port:8761}/eureka/
+  instance:
+    prefer-ip-address: true
+management:
+  security:
+    enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream
+feign:
+  hystrix:
+    enabled: true
+ribbon:
+  ConnectTimeout: 6000
+  ReadTimeout: 6000
+  MaxAutoRetries: 0
+  MaxAutoRetriesNextServer: 0
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 15000

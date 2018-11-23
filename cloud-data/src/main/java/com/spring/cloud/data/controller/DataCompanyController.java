@@ -1,6 +1,8 @@
 package com.spring.cloud.data.controller;
 
+import com.spring.cloud.common.base.Constants;
 import com.spring.cloud.common.po.Company;
+import com.spring.cloud.common.result.ResultCode;
 import com.spring.cloud.common.vo.CompanyUser;
 import com.spring.cloud.data.config.DataCompanyConfig;
 import org.springframework.beans.BeanUtils;
@@ -29,21 +31,20 @@ public class DataCompanyController {
     private DataCompanyConfig dataCompanyConfig;
 
     @RequestMapping(value = "/insertCompany", method = RequestMethod.GET)
-    public String insertCompany(CompanyUser companyUser, HttpServletRequest request){
-        String token = request.getHeader("oauthToken");
-        System.out.println("insertCompany token : " + token);
+    public String insertCompany(CompanyUser companyUser){
 
+        //声明实体对象
         Company company = new Company();
-//        company.setcName("测试用户");
-//        company.setcCode("测试编码");
-//        company.setcDes("测试描述");
 
         //将VO内相同的值放到PO内
         BeanUtils.copyProperties(companyUser, company);
-        int i = dataCompanyConfig.insertCompany(company);
-        System.out.println("i : " + i);
 
-        return "创建成功 ： " + i;
+        //判断并响应结果
+        if(dataCompanyConfig.insertCompany(company) > 0) {
+            return Constants.operaterSuccess;
+        } else  {
+            return Constants.operaterError;
+        }
     }
 
     @GetMapping("/findAllCompany")

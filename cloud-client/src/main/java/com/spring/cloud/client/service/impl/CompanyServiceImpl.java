@@ -26,7 +26,7 @@ public class CompanyServiceImpl implements CompanyService {
 
     @Override
     public String insertCompany(CompanyUser companyUser) {
-        System.out.println("你好");
+        // TODO 这里可以做客户端的逻辑处理
         return companyDataService.insertCompany(companyUser);
     }
 

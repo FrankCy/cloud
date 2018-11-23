@@ -8,14 +8,17 @@
 cloud|N/A|父节点
 cloud-client|9091|用户服务
 cloud-client-admin|9092|后台管理程序
+cloud-client-app|9093|手机应用程序接口
+cloud-client-pc|9094|web客户端
+cloud-client-partner|9095|与第三方交互客户端
 cloud-common|N/A|公共组件
 cloud-config-server|9090|配置中心
 cloud-data|8099|数据服务，提供基础的数据
 cloud-eureka-server|8761|注册中心
 cloud-hystrix|9099|hystrix dashboard& Turbine
-cloud-zuul|7777|API GateWay
 cloud-mq-producer|8077|ActiveMQ服务端
 cloud-mq-consumer|8078|ActiveMQ消费端
+cloud-zuul|7777|API GateWay
 
 ### 技术栈 ###
 技术|版本|应用场景

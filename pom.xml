@@ -18,10 +18,16 @@
         <module>cloud-eureka-server</module>
         <module>cloud-config-server</module>
         <module>cloud-common</module>
+        <module>cloud-common-config</module>
+        <module>cloud-common-core</module>
         <module>cloud-zuul</module>
         <module>cloud-data</module>
         <module>cloud-data-partner</module>
         <module>cloud-client</module>
+        <module>cloud-client-admin</module>
+        <module>cloud-client-app</module>
+        <module>cloud-client-partner</module>
+        <module>cloud-client-pc</module>
         <module>cloud-mq-producer</module>
         <module>cloud-mq-consumer</module>
         <module>cloud-hystrix</module>
