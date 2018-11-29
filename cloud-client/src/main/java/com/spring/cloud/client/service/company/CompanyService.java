@@ -1,9 +1,7 @@
 package com.spring.cloud.client.service.company;
 
-import com.github.pagehelper.PageInfo;
 import com.spring.cloud.common.po.Company;
 import com.spring.cloud.common.vo.CompanyUser;
-import com.spring.cloud.common.vo.DataResult;
 import com.spring.cloud.common.vo.PageResult;
 
 /**

@@ -1,6 +1,5 @@
 package com.spring.cloud.client.controller;
 
-import com.github.pagehelper.PageInfo;
 import com.spring.cloud.client.service.company.CompanyService;
 import com.spring.cloud.common.base.Constants;
 import com.spring.cloud.common.po.Company;

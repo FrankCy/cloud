@@ -1,11 +1,9 @@
 package com.spring.cloud.client.service.impl;
 
-import com.github.pagehelper.PageInfo;
 import com.spring.cloud.client.service.company.CompanyService;
 import com.spring.cloud.client.service.dataservcie.CompanyDataService;
 import com.spring.cloud.common.po.Company;
 import com.spring.cloud.common.vo.CompanyUser;
-import com.spring.cloud.common.vo.DataResult;
 import com.spring.cloud.common.vo.PageResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

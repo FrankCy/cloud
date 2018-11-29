@@ -2,7 +2,6 @@ package com.spring.cloud.data.config;
 
 import com.spring.cloud.data.dao.CompanyDao;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 /**
@@ -10,7 +9,6 @@ import org.springframework.stereotype.Component;
  * @description : 配置信息
  */
 @Component
-@ConfigurationProperties(prefix = "com.spring.cloud.data")
 public class DataConfig {
 
     private String defaultUser;
