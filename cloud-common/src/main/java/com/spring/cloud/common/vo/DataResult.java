@@ -4,12 +4,12 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * @author: HaijunLiu
- * @email: isaiah@sohu.com
- * @description：封装异步查询列表结果
- * @date: 2018/1/29 10:57
- * @mofified By:
+ * @description：数据初始化
  * @version 1.0
+ * @author: Yang.Chang
+ * @email: cy880708@163.com
+ * @date: 2018/11/29 下午1:45
+ * @mofified By:
  */
 public class DataResult<T> implements Serializable{
 
