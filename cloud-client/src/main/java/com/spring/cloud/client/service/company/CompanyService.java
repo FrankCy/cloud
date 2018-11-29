@@ -3,6 +3,8 @@ package com.spring.cloud.client.service.company;
 import com.github.pagehelper.PageInfo;
 import com.spring.cloud.common.po.Company;
 import com.spring.cloud.common.vo.CompanyUser;
+import com.spring.cloud.common.vo.DataResult;
+import com.spring.cloud.common.vo.PageResult;
 
 /**
  * @version 1.0
@@ -37,6 +39,6 @@ public interface CompanyService {
      * @date: 2018/11/15 下午1:50
      * @mofified By:
      */
-    PageInfo<Company> findAllCompany(int pageNum, int pageSize);
+    PageResult<Company> findAllCompany(int pageNum, int pageSize);
 
 }

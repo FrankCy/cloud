@@ -1,5 +1,6 @@
 package com.spring.cloud.data.dao;
 
+import com.github.pagehelper.Page;
 import com.spring.cloud.common.po.Company;
 
 import java.util.List;
@@ -34,6 +35,6 @@ public interface CompanyDao {
      * @date: 2018/11/16 下午1:30
      * @mofified By:
      */
-    List<Company> findAllCompany();
+    Page<Company> findAllCompany();
 
 }

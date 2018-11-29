@@ -1,7 +1,10 @@
 package com.spring.cloud.client.service.fallback;
 
 import com.spring.cloud.client.service.dataservcie.CompanyDataService;
+import com.spring.cloud.common.po.Company;
 import com.spring.cloud.common.vo.CompanyUser;
+import com.spring.cloud.common.vo.DataResult;
+import com.spring.cloud.common.vo.PageResult;
 import org.springframework.stereotype.Component;
 
 /**
@@ -23,7 +26,8 @@ public class CompanyClientFallback implements CompanyDataService {
     }
 
     @Override
-    public String findAllCompany() {
-        return new String("查询所有公司失败！FeignClient");
+    public PageResult<Company> findAllCompany() {
+        PageResult dataResult = new PageResult();
+        return dataResult;
     }
 }

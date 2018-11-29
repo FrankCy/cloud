@@ -2,8 +2,8 @@ package com.spring.cloud.data.controller;
 
 import com.spring.cloud.common.base.Constants;
 import com.spring.cloud.common.po.Company;
-import com.spring.cloud.common.result.ResultCode;
 import com.spring.cloud.common.vo.CompanyUser;
+import com.spring.cloud.common.vo.PageResult;
 import com.spring.cloud.data.config.DataCompanyConfig;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,8 +11,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-
-import javax.servlet.http.HttpServletRequest;
 
 /**
  * @version 1.0
@@ -48,8 +46,9 @@ public class DataCompanyController {
     }
 
     @GetMapping("/findAllCompany")
-    public String findAllCompany(){
-        return "查询数据";
+    public PageResult<Company> findAllCompany(){
+        PageResult<Company> companyList = dataCompanyConfig.findAllCompany();
+        return companyList;
     }
 
 }
