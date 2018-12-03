@@ -18,22 +18,22 @@ spring:
       name: config-info
       profile: dev
   application:
-    name: cloud-client-admin-server
+    name: admin
   mvc:
     view:
       ##默认前缀
-      prefix: /
+      prefix: /admin/
       ##默认后缀
     #      suffix: .html
     ##关闭thymeleaf缓存
     #  thymeleaf:
     #    cache: false
-    freemarker:
-      cache: false
-      charset: UTF-8
-      check-template-location: true
-      content-type: text/html
-      expose-request-attributes: true
-      expose-session-attributes: true
-      request-context-attribute: request
+  freemarker:
+    cache: false
+    charset: UTF-8
+    check-template-location: true
+    content-type: text/html
+    expose-request-attributes: true
+    expose-session-attributes: true
+    request-context-attribute: request
   #    template-loader-path: classpath:/web/

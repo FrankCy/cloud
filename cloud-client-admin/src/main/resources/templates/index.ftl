@@ -8,7 +8,7 @@
             <!-- 顶部 -->
             <div class="layui-header header">
                 <div class="layui-main">
-                    <a href="#" class="logo">layui后台管理</a>
+                    <a href="#" class="logo">BDJR-后台管理</a>
                     <!-- 显示/隐藏菜单 -->
                     <a href="javascript:;" class="iconfont hideMenu icon-menu1"></a>
                     <!-- 搜索 -->
@@ -74,7 +74,7 @@
                         </li>
                         <li class="layui-nav-item" pc>
                             <a href="javascript:;">
-                                <img src="/images/face.jpg" class="layui-circle" width="35" height="35">
+                                <img src="/admin/images/face.jpg" class="layui-circle" width="35" height="35">
                                 <cite>先生</cite>
                             </a>
                             <dl class="layui-nav-child">
@@ -90,7 +90,7 @@
             <!-- 左侧导航 -->
             <div class="layui-side layui-bg-black">
                 <div class="user-photo">
-                    <a class="img" title="我的头像" ><img src="/images/face.jpg"></a>
+                    <a class="img" title="我的头像" ><img src="/admin/images/face.jpg"></a>
                     <p>Hi <span class="userName">先生</span>, 欢迎登陆</p>
                 </div>
                 <div class="navBar layui-side-scroll"></div>
@@ -113,7 +113,7 @@
                     </ul>
                     <div class="layui-tab-content clildFrame">
                         <div class="layui-tab-item layui-show">
-                            page/main
+                            <iframe src="main"></iframe>
                         </div>
                     </div>
                 </div>
@@ -128,8 +128,8 @@
         <div class="site-tree-mobile layui-hide"><i class="layui-icon">&#xe602;</i></div>
         <div class="site-mobile-shade"></div>
 
-        <script type="text/javascript" src="/layui/layui.js"></script>
-        <script type="text/javascript" src="/js/leftNav.js"></script>
-        <script type="text/javascript" src="/js/index.js"></script>
+        <script type="text/javascript" src="/admin/layui/layui.js"></script>
+        <script type="text/javascript" src="/admin/js/leftNav.js"></script>
+        <script type="text/javascript" src="/admin/js/index.js"></script>
     </body>
 </@html>

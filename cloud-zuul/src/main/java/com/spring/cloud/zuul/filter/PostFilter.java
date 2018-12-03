@@ -17,7 +17,7 @@ import static org.springframework.cloud.netflix.zuul.filters.support.FilterConst
  * @date: 2018/11/19 下午2:36
  * @mofified By:
  */
-@Configuration
+//@Configuration
 public class PostFilter extends ZuulFilter {
 
     @Override

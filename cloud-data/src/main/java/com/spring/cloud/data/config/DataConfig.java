@@ -5,8 +5,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
- * @author: yang.chang
- * @description : 配置信息
+ * @description：配置信息
+ * @version 1.0
+ * @author: Yang.Chang
+ * @email: cy880708@163.com
+ * @date: 2018/11/29 下午2:10
+ * @mofified By:
  */
 @Component
 public class DataConfig {

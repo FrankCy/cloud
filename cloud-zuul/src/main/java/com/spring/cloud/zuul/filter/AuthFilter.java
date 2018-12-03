@@ -28,7 +28,7 @@ import static org.springframework.cloud.netflix.zuul.filters.support.FilterConst
  * @date: 2018/11/20 上午11:21
  * @mofified By:
  */
-@Configuration
+//@Configuration
 public class AuthFilter extends ZuulFilter {
 
 	private static final Logger logger = LoggerFactory.getLogger(AuthFilter.class);
