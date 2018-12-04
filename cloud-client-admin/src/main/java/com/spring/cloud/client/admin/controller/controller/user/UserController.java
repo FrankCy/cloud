@@ -4,17 +4,21 @@ import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.spring.cloud.client.admin.controller.service.UserService;
 import com.spring.cloud.common.base.Constants;
+import com.spring.cloud.common.po.Company;
 import com.spring.cloud.common.po.UserWithBLOBs;
 import com.spring.cloud.common.result.BdjrResult;
+import com.spring.cloud.common.util.PageUtil;
+import com.spring.cloud.common.util.StringUtil;
 import com.spring.cloud.common.util.date.DateUtils;
+import com.spring.cloud.common.vo.CompanyUser;
+import com.spring.cloud.common.vo.DataResult;
+import com.spring.cloud.common.vo.PageResult;
 import com.spring.cloud.common.vo.UserRole;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.UUID;
 
@@ -142,6 +146,30 @@ public class UserController {
             return new BdjrResult.Builder<>().success("查询成功", userWithBLOBs).build();
         } else {
             return new BdjrResult.Builder<>().failure("查询失败", "9568").build();
+        }
+    }
+
+    /**
+     * @description：查询用户信息
+     * @version 1.0
+     * @author: Yang.Chang
+     * @email: cy880708@163.com
+     * @date: 2018/12/4 下午2:19
+     * @mofified By:
+     */
+    @RequestMapping(value = "/selectUsers", method = RequestMethod.POST)
+    @ResponseBody
+    public BdjrResult selectUsers(UserRole userRole,
+                                  @RequestParam(defaultValue = "1") int offset,
+                                  @RequestParam(defaultValue = "10")  int limit,
+                                  @RequestParam(defaultValue = "createTime") String orderColumn,
+                                  @RequestParam(defaultValue = "desc") String order){
+
+        PageResult<UserWithBLOBs> users = userService.selectUsers(userRole, PageUtil.getPageNum(offset, limit), limit, StringUtil.camel2Underline(orderColumn), order);
+        if(!StringUtils.isEmpty(users)) {
+            return new BdjrResult.Builder<>().success("查询成功", users).build();
+        } else {
+            return new BdjrResult.Builder<>().failure("查询失败", "400").build();
         }
     }
 

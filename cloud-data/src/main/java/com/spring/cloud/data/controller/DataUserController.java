@@ -1,8 +1,10 @@
 package com.spring.cloud.data.controller;
 
 import com.spring.cloud.common.base.Constants;
+import com.spring.cloud.common.po.Company;
 import com.spring.cloud.common.po.User;
 import com.spring.cloud.common.po.UserWithBLOBs;
+import com.spring.cloud.common.vo.PageResult;
 import com.spring.cloud.common.vo.UserRole;
 import com.spring.cloud.data.config.DataUserConfig;
 import org.springframework.beans.BeanUtils;
@@ -89,6 +91,12 @@ public class DataUserController {
         } else {
             return null;
         }
+    }
+
+    @RequestMapping(value = "/selectUsers", method = RequestMethod.GET)
+    public PageResult<UserWithBLOBs> selectUsers(UserRole userRole, int pageNum, int pageSize, String orderColumn, String order){
+        PageResult<UserWithBLOBs> userWithBLOBsPageResult = dataUserConfig.selectUsers(userRole, pageNum, pageSize, orderColumn, order);
+        return userWithBLOBsPageResult;
     }
 
 }

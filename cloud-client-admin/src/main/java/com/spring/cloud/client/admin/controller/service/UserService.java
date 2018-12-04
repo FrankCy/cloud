@@ -1,6 +1,7 @@
 package com.spring.cloud.client.admin.controller.service;
 
 import com.spring.cloud.common.po.UserWithBLOBs;
+import com.spring.cloud.common.vo.PageResult;
 import com.spring.cloud.common.vo.UserRole;
 
 /**
@@ -46,7 +47,7 @@ public interface UserService {
     String updateUser(UserRole userRole);
 
     /**
-     * @description：查询用户
+     * @description：查询用户（ID）
      * @version 1.0
      * @author: Yang.Chang
      * @email: cy880708@163.com
@@ -54,5 +55,20 @@ public interface UserService {
      * @mofified By:
      */
     UserWithBLOBs selectUser(UserRole userRole);
+
+    /**
+     * @description：查询用户
+     * @version 1.0
+     * @author: Yang.Chang
+     * @email: cy880708@163.com
+     * @date: 2018/12/4 下午1:57
+     * @param userRole 查询实体
+     * @param pageNum 第几页
+     * @param pageSize 每页显示条目数
+     * @param orderName 排序字段
+     * @param orderType 排序方式 (asc / desc)
+     * @mofified By:
+     */
+    PageResult<UserWithBLOBs> selectUsers(UserRole userRole, int pageNum, int pageSize, String orderName, String orderType);
 
 }

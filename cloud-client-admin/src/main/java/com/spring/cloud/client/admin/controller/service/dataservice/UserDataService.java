@@ -2,10 +2,12 @@ package com.spring.cloud.client.admin.controller.service.dataservice;
 
 import com.spring.cloud.client.admin.controller.service.fallback.UserClientFallback;
 import com.spring.cloud.common.po.UserWithBLOBs;
+import com.spring.cloud.common.vo.PageResult;
 import com.spring.cloud.common.vo.UserRole;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  * @version 1.0
@@ -31,5 +33,12 @@ public interface UserDataService {
 
     @RequestMapping(value = "/selectUser", method = RequestMethod.GET)
     UserWithBLOBs selectUser(UserRole userRole);
+
+    @RequestMapping(value = "/selectUsers", method = RequestMethod.GET)
+    PageResult<UserWithBLOBs> selectUsers(@RequestParam("userRole") UserRole userRole,
+                                          @RequestParam("pageNum") int pageNum,
+                                          @RequestParam("pageSize") int pageSize,
+                                          @RequestParam("orderName") String orderName,
+                                          @RequestParam("orderType") String orderType);
 
 }

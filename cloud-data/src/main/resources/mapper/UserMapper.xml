@@ -794,4 +794,17 @@
       sealstatus = #{sealstatus,jdbcType=INTEGER}
     where id = #{id,jdbcType=VARCHAR}
   </update>
+
+  <select id="selectByPageNumSize" resultMap="ResultMapWithBLOBs">
+    select
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from user us
+    <where>
+      <if test="ur.username != null">
+        and us.username = #{ur.username, jdbcType=VARCHAR}
+      </if>
+    </where>
+  </select>
 </mapper>

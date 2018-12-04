@@ -60,6 +60,7 @@ public class DataResult<T> implements Serializable{
         public DataResult build() {
             return new DataResult(this);
         }
+
         public DataResult build(PageResult pageResult) {
             this.total = pageResult.getTotalCount();
             this.rows = pageResult.getList();
