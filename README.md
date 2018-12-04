@@ -75,3 +75,19 @@ Client(Controller) --> Client(Services) 这里@Autowired DataService --> DataSer
 - activemq队列demo <br/>
 [http://localhost:8077//producer/send](http://localhost:8077//producer/send)请求放入队列
 
+- 后台管理程序（主键查询用户）<br/>
+[http://127.0.0.1:7777/admin/selectUser](http://127.0.0.1:7777/admin/selectUser)
+
+- 后台管理程序（新增用户）<br/>
+[http://127.0.0.1:7777/admin/insertUser](http://127.0.0.1:7777/admin/insertUser)
+
+- 后台管理程序（根据主键删除用户-单条）<br/>
+[http://127.0.0.1:7777/admin/deleteUser](http://127.0.0.1:7777/admin/deleteUser)
+
+- 后台管理程序（修改用户信息）<br/>
+[http://127.0.0.1:7777/admin/updateUser](http://127.0.0.1:7777/admin/updateUser)
+
+- 后台管理程序（访问首页）<br/>
+[http://localhost:7777/admin/index](http://localhost:7777/admin/index)
+
+
