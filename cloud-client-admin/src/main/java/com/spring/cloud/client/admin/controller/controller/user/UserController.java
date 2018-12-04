@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.spring.cloud.client.admin.controller.service.UserService;
 import com.spring.cloud.common.base.Constants;
+import com.spring.cloud.common.po.UserWithBLOBs;
 import com.spring.cloud.common.result.BdjrResult;
 import com.spring.cloud.common.util.date.DateUtils;
 import com.spring.cloud.common.vo.UserRole;
@@ -120,6 +121,27 @@ public class UserController {
             return new BdjrResult.Builder<>().success("修改成功").build();
         } else {
             return new BdjrResult.Builder<>().failure("修改失败").build();
+        }
+    }
+
+    /**
+     * @description：查询用户
+     * @version 1.0
+     * @author: Yang.Chang
+     * @email: cy880708@163.com
+     * @date: 2018/12/4 下午1:53
+     * @mofified By:
+     */
+    @RequestMapping(value = "/selectUser", method = RequestMethod.POST)
+    @ResponseBody
+    public BdjrResult selectUser(UserRole userRole) {
+        //调用修改服务
+        UserWithBLOBs userWithBLOBs = userService.selectUser(userRole);
+
+        if(!StringUtils.isEmpty(userWithBLOBs)) {
+            return new BdjrResult.Builder<>().success("查询成功", userWithBLOBs).build();
+        } else {
+            return new BdjrResult.Builder<>().failure("查询失败", "9568").build();
         }
     }
 

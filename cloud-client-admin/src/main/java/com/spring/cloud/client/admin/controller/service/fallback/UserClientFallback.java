@@ -1,6 +1,7 @@
 package com.spring.cloud.client.admin.controller.service.fallback;
 
 import com.spring.cloud.client.admin.controller.service.dataservice.UserDataService;
+import com.spring.cloud.common.po.UserWithBLOBs;
 import com.spring.cloud.common.vo.UserRole;
 import org.springframework.stereotype.Component;
 
@@ -30,6 +31,11 @@ public class UserClientFallback implements UserDataService {
     @Override
     public String updateUser(UserRole userRole) {
         return "修改用户失败";
+    }
+
+    @Override
+    public UserWithBLOBs selectUser(UserRole userRole) {
+        return null;
     }
 
 }

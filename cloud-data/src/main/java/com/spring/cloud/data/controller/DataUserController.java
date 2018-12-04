@@ -79,4 +79,16 @@ public class DataUserController {
 
     }
 
+    @RequestMapping(value = "/selectUser", method = RequestMethod.GET)
+    public UserWithBLOBs selectUser(UserRole userRole){
+        //获取用户逐渐
+        String id = userRole.getId();
+        UserWithBLOBs userWithBLOBs = dataUserConfig.selectById(id);
+        if(userWithBLOBs != null) {
+            return userWithBLOBs;
+        } else {
+            return null;
+        }
+    }
+
 }

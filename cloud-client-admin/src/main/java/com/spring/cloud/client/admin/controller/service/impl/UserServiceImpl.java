@@ -2,6 +2,7 @@ package com.spring.cloud.client.admin.controller.service.impl;
 
 import com.spring.cloud.client.admin.controller.service.UserService;
 import com.spring.cloud.client.admin.controller.service.dataservice.UserDataService;
+import com.spring.cloud.common.po.UserWithBLOBs;
 import com.spring.cloud.common.vo.UserRole;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -38,6 +39,12 @@ public class UserServiceImpl implements UserService {
     public String updateUser(UserRole userRole) {
         // TODO 这里可以做客户端的逻辑处理
         return userDataService.updateUser(userRole);
+    }
+
+    @Override
+    public UserWithBLOBs selectUser(UserRole userRole) {
+        // TODO 这里可以做客户端的逻辑处理
+        return userDataService.selectUser(userRole);
     }
 
 

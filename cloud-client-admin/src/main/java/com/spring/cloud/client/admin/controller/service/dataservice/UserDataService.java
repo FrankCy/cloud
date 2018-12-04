@@ -1,6 +1,7 @@
 package com.spring.cloud.client.admin.controller.service.dataservice;
 
 import com.spring.cloud.client.admin.controller.service.fallback.UserClientFallback;
+import com.spring.cloud.common.po.UserWithBLOBs;
 import com.spring.cloud.common.vo.UserRole;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,5 +28,8 @@ public interface UserDataService {
 
     @RequestMapping(value = "/updateUser", method = RequestMethod.GET)
     String updateUser(UserRole userRole);
+
+    @RequestMapping(value = "/selectUser", method = RequestMethod.GET)
+    UserWithBLOBs selectUser(UserRole userRole);
 
 }
