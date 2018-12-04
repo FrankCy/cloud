@@ -50,7 +50,7 @@ management:
 #Mybatis
 mybatis:
   mapper-locations: classpath:mapper/*.xml
-  type-aliases-package: com.spring.cloud.data.dao
+  type-aliases-package: com.spring.cloud.data.mapper
 
 #pagehelper
 pagehelper:

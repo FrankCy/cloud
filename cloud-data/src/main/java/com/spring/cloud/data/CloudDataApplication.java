@@ -13,7 +13,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 @SpringBootApplication
 @EnableDiscoveryClient
 @EnableCircuitBreaker
-@MapperScan("com.spring.cloud.data.dao")
+@MapperScan("com.spring.cloud.data.mapper")
 public class CloudDataApplication {
 
 	public static void main(String[] args) {

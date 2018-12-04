@@ -15,6 +15,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.Date;
+import java.util.UUID;
+
 /**
  * @version 1.0
  * @description：
@@ -68,8 +71,8 @@ public class UserController {
     @ResponseBody
     public BdjrResult insertUser(UserRole userRole) {
         //校验数据准确性
-
-
+        userRole.setId((UUID.randomUUID().toString().replace("-","")));
+//        userRole.setRegisterTime(new Date());
         //调用新增服务
         String insertUserStr = userService.insertUser(userRole);
 

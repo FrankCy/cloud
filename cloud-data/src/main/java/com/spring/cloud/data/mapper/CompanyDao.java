@@ -8,7 +8,7 @@ import com.spring.cloud.common.po.Company;
  * @description：
  * @author: Yang.Chang
  * @project: cloud
- * @package: com.spring.cloud.data.dao、
+ * @package: com.spring.cloud.data.mapper、
  * @email: cy880708@163.com
  * @date: 2018/11/16 下午1:29
  * @mofified By:

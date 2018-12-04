@@ -34,6 +34,7 @@ public class DataUserController {
 
         //将VO内相同的值放到PO内
         BeanUtils.copyProperties(userRole, user);
+        user.setRegisterTime(userRole.getRegisterTime());
 
         //判断并响应结果
         if(dataUserConfig.insertUser(user) > 0) {

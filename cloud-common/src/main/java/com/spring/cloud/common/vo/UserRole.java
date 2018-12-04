@@ -1,5 +1,7 @@
 package com.spring.cloud.common.vo;
 
+import java.util.Date;
+
 /**
  * @version 1.0
  * @description：
@@ -20,7 +22,7 @@ public class UserRole {
 
     private String nickname;
 
-    private String registerTime;
+    private Date registerTime;
 
     public String getId() {
         return id;
@@ -54,11 +56,11 @@ public class UserRole {
         this.nickname = nickname;
     }
 
-    public String getRegisterTime() {
+    public Date getRegisterTime() {
         return registerTime;
     }
 
-    public void setRegisterTime(String registerTime) {
+    public void setRegisterTime(Date registerTime) {
         this.registerTime = registerTime;
     }
 }
