@@ -1,7 +1,6 @@
 package com.spring.cloud.data.controller;
 
 import com.spring.cloud.common.base.Constants;
-import com.spring.cloud.common.po.Company;
 import com.spring.cloud.common.po.User;
 import com.spring.cloud.common.po.UserWithBLOBs;
 import com.spring.cloud.common.vo.PageResult;
