@@ -1,6 +1,6 @@
 package com.spring.cloud.data.config;
 
-import com.spring.cloud.data.dao.CompanyDao;
+import com.spring.cloud.data.mapper.CompanyDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

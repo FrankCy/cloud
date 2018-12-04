@@ -3,7 +3,7 @@ package com.spring.cloud.data.config;
 import com.github.pagehelper.Page;
 import com.spring.cloud.common.po.Company;
 import com.spring.cloud.common.vo.PageResult;
-import com.spring.cloud.data.dao.CompanyDao;
+import com.spring.cloud.data.mapper.CompanyDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

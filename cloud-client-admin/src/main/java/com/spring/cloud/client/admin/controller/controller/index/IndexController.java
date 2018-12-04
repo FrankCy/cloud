@@ -1,8 +1,5 @@
 package com.spring.cloud.client.admin.controller.controller.index;
 
-import com.alibaba.fastjson.JSONArray;
-import com.alibaba.fastjson.JSONObject;
-import com.spring.cloud.common.util.date.DateUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,14 +17,44 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class IndexController {
 
+    /**
+     * @description：访问首页
+     * @version 1.0
+     * @author: Yang.Chang
+     * @email: cy880708@163.com
+     * @date: 2018/12/4 上午10:12
+     * @mofified By:
+     */
     @RequestMapping(value = "/index")
     public String index(Model model) {
         return "index";
     }
 
+    /**
+     * @description：访问主页
+     * @version 1.0
+     * @author: Yang.Chang
+     * @email: cy880708@163.com
+     * @date: 2018/12/4 上午10:12
+     * @mofified By:
+     */
     @RequestMapping(value = "/main")
     public String main(Model model) {
         return "page/main";
     }
+
+    /**
+     * @description：
+     * @version 1.0
+     * @author: Yang.Chang
+     * @email: cy880708@163.com
+     * @date: 2018/12/3 下午5:37
+     * @mofified By:
+     */
+    @RequestMapping(value = "/userIndex")
+    public String userIndex(Model model) {
+        return "page/user/userList";
+    }
+
 
 }

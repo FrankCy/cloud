@@ -1,4 +1,4 @@
-package com.spring.cloud.data.dao;
+package com.spring.cloud.data.mapper;
 
 import com.github.pagehelper.Page;
 import com.spring.cloud.common.po.Company;

@@ -11,7 +11,7 @@
 		<meta name="format-detection" content="telephone=no">
 		<link rel="stylesheet" href="/admin/layui/css/layui.css" media="all" />
 		<link rel="stylesheet" href="//at.alicdn.com/t/font_tnyc012u2rlwstt9.css" media="all" />
-		<link rel="stylesheet" href="/admin/css/news.css" media="all" />
+		<#--<link rel="stylesheet" href="/admin/css/news.css" media="all" />-->
 	</head>
 	<body class="childrenBody">
 	<blockquote class="layui-elem-quote news_search">

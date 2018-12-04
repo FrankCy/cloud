@@ -43,7 +43,7 @@ layui.config({
             var index = layer.msg('查询中，请稍候',{icon: 16,time:false,shade:0.8});
             setTimeout(function(){
                 $.ajax({
-                    url : "../../json/newsList.json",
+                    url : "mainList",
                     type : "get",
                     dataType : "json",
                     success : function(data){
@@ -290,7 +290,7 @@ layui.config({
         }
 
         //分页
-        var nums = 13; //每页出现的数据量
+        var nums = 20; //每页出现的数据量
         if(that){
             newsData = that;
         }

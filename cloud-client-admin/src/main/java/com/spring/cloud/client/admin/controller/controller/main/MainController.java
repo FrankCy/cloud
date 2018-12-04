@@ -7,9 +7,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
-
-import javax.servlet.http.HttpServletResponse;
 
 /**
  * @version 1.0
@@ -34,7 +31,7 @@ public class MainController {
      */
     @RequestMapping(value = "/mainList", produces = "application/json;charset=UTF-8")
     @ResponseBody
-    public String mainList(HttpServletResponse response, Model model) {
+    public String mainList(Model model) {
         JSONArray jsonArray = new JSONArray();
         for(int i=0 ; i<10000; i++) {
             JSONObject jsonObject = new JSONObject();
