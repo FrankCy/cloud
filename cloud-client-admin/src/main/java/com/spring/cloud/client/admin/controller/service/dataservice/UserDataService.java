@@ -22,4 +22,10 @@ public interface UserDataService {
     @RequestMapping(value = "/insertUser", method = RequestMethod.GET)
     String insertUser(UserRole userRole);
 
+    @RequestMapping(value = "/deleteUser", method = RequestMethod.GET)
+    String deleteUser(UserRole userRole);
+
+    @RequestMapping(value = "/updateUser", method = RequestMethod.GET)
+    String updateUser(UserRole userRole);
+
 }

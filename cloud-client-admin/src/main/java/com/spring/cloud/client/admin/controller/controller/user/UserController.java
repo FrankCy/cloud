@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.util.Date;
 import java.util.UUID;
 
 /**
@@ -72,14 +71,55 @@ public class UserController {
     public BdjrResult insertUser(UserRole userRole) {
         //校验数据准确性
         userRole.setId((UUID.randomUUID().toString().replace("-","")));
-//        userRole.setRegisterTime(new Date());
         //调用新增服务
         String insertUserStr = userService.insertUser(userRole);
 
         if(!StringUtils.isEmpty(insertUserStr) && Constants.operaterSuccess.equals(insertUserStr)) {
-            return new BdjrResult.Builder<>().success("新增完毕").build();
+            return new BdjrResult.Builder<>().success("新增成功").build();
         } else {
             return new BdjrResult.Builder<>().failure("新增失败").build();
+        }
+    }
+
+    /**
+     * @description：删除用户
+     * @version 1.0
+     * @author: Yang.Chang
+     * @email: cy880708@163.com
+     * @date: 2018/12/4 下午1:19
+     * @mofified By:
+     */
+    @RequestMapping(value = "/deleteUser", method = RequestMethod.POST)
+    @ResponseBody
+    public BdjrResult deleteUser(UserRole userRole) {
+        //调用删除服务
+        String deleteUserStr = userService.deleteUser(userRole);
+
+        if(!StringUtils.isEmpty(deleteUserStr) && Constants.operaterSuccess.equals(deleteUserStr)) {
+            return new BdjrResult.Builder<>().success("删除成功").build();
+        } else {
+            return new BdjrResult.Builder<>().failure("删除失败").build();
+        }
+    }
+
+    /**
+     * @description：修改用户信息
+     * @version 1.0
+     * @author: Yang.Chang
+     * @email: cy880708@163.com
+     * @date: 2018/12/4 下午1:33
+     * @mofified By:
+     */
+    @RequestMapping(value = "/updateUser", method = RequestMethod.POST)
+    @ResponseBody
+    public BdjrResult updateUser(UserRole userRole) {
+        //调用修改服务
+        String updateUserStr = userService.updateUser(userRole);
+
+        if(!StringUtils.isEmpty(updateUserStr) && Constants.operaterSuccess.equals(updateUserStr)) {
+            return new BdjrResult.Builder<>().success("修改成功").build();
+        } else {
+            return new BdjrResult.Builder<>().failure("修改失败").build();
         }
     }
 

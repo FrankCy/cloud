@@ -22,4 +22,14 @@ public class UserClientFallback implements UserDataService {
         return "新增用户失败";
     }
 
+    @Override
+    public String deleteUser(UserRole userRole) {
+        return "删除用户失败";
+    }
+
+    @Override
+    public String updateUser(UserRole userRole) {
+        return "修改用户失败";
+    }
+
 }

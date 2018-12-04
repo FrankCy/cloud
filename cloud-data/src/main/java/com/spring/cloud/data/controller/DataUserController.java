@@ -2,6 +2,7 @@ package com.spring.cloud.data.controller;
 
 import com.spring.cloud.common.base.Constants;
 import com.spring.cloud.common.po.User;
+import com.spring.cloud.common.po.UserWithBLOBs;
 import com.spring.cloud.common.vo.UserRole;
 import com.spring.cloud.data.config.DataUserConfig;
 import org.springframework.beans.BeanUtils;
@@ -42,6 +43,40 @@ public class DataUserController {
         } else  {
             return Constants.operaterError;
         }
+    }
+
+    @RequestMapping(value = "/deleteUser", method = RequestMethod.GET)
+    public String deleteUser(UserRole userRole){
+
+        //获取用户逐渐
+        String id = userRole.getId();
+
+        //判断并响应结果
+        if(dataUserConfig.deleteUser(id) > 0) {
+            return Constants.operaterSuccess;
+        } else  {
+            return Constants.operaterError;
+        }
+    }
+
+    @RequestMapping(value = "/updateUser", method = RequestMethod.GET)
+    public String updateUser(UserRole userRole){
+
+        //获取用户逐渐
+        String id = userRole.getId();
+        UserWithBLOBs userWithBLOBs = dataUserConfig.selectById(id);
+        if(userWithBLOBs != null) {
+            //判断并响应结果
+            BeanUtils.copyProperties(userRole, userWithBLOBs);
+            if(dataUserConfig.updateUser(userWithBLOBs) > 0) {
+                return Constants.operaterSuccess;
+            } else  {
+                return Constants.operaterError;
+            }
+        } else {
+            return Constants.operaterError;
+        }
+
     }
 
 }

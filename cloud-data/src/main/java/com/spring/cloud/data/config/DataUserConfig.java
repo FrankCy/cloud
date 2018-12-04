@@ -32,4 +32,16 @@ public class DataUserConfig {
         return userMapper.insertSelective(userWithBLOBs);
     }
 
+    public int deleteUser(String id) {
+        return userMapper.deleteByPrimaryKey(id);
+    }
+
+    public int updateUser(UserWithBLOBs userWithBLOBs) {
+        return userMapper.updateByPrimaryKeySelective(userWithBLOBs);
+    }
+
+    public UserWithBLOBs selectById(String id) {
+        return userMapper.selectByPrimaryKey(id);
+    }
+
 }

@@ -24,4 +24,24 @@ public interface UserService {
      */
     String insertUser(UserRole userRole);
 
+    /**
+     * @description：删除用户
+     * @version 1.0
+     * @author: Yang.Chang
+     * @email: cy880708@163.com
+     * @date: 2018/12/4 下午1:21
+     * @mofified By:
+     */
+    String deleteUser(UserRole userRole);
+
+    /**
+     * @description：修改用户
+     * @version 1.0
+     * @author: Yang.Chang
+     * @email: cy880708@163.com
+     * @date: 2018/12/4 下午1:34
+     * @mofified By:
+     */
+    String updateUser(UserRole userRole);
+
 }

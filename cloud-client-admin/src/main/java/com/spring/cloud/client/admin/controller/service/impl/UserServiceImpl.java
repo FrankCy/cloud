@@ -28,5 +28,17 @@ public class UserServiceImpl implements UserService {
         return userDataService.insertUser(userRole);
     }
 
+    @Override
+    public String deleteUser(UserRole userRole) {
+        // TODO 这里可以做客户端的逻辑处理
+        return userDataService.deleteUser(userRole);
+    }
+
+    @Override
+    public String updateUser(UserRole userRole) {
+        // TODO 这里可以做客户端的逻辑处理
+        return userDataService.updateUser(userRole);
+    }
+
 
 }
