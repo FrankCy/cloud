@@ -2,6 +2,7 @@ package com.spring.cloud.client.admin.controller.service.dataservice;
 
 import com.spring.cloud.client.admin.controller.service.fallback.UserClientFallback;
 import com.spring.cloud.common.po.UserWithBLOBs;
+import com.spring.cloud.common.vo.PageBean;
 import com.spring.cloud.common.vo.PageResult;
 import com.spring.cloud.common.vo.UserRole;
 import org.springframework.cloud.openfeign.FeignClient;
@@ -36,9 +37,6 @@ public interface UserDataService {
 
     @RequestMapping(value = "/selectUsers", method = RequestMethod.GET)
     PageResult<UserWithBLOBs> selectUsers(@RequestParam("userRole") UserRole userRole,
-                                          @RequestParam("pageNum") int pageNum,
-                                          @RequestParam("pageSize") int pageSize,
-                                          @RequestParam("orderName") String orderName,
-                                          @RequestParam("orderType") String orderType);
+                                          @RequestParam("pageBean") PageBean pageBean);
 
 }

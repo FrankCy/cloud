@@ -3,6 +3,7 @@ package com.spring.cloud.data.config;
 import com.github.pagehelper.Page;
 import com.spring.cloud.common.po.User;
 import com.spring.cloud.common.po.UserWithBLOBs;
+import com.spring.cloud.common.vo.PageBean;
 import com.spring.cloud.common.vo.PageResult;
 import com.spring.cloud.common.vo.UserRole;
 import com.spring.cloud.data.mapper.UserMapper;
@@ -47,8 +48,8 @@ public class DataUserConfig {
         return userMapper.selectByPrimaryKey(id);
     }
 
-    public PageResult<UserWithBLOBs> selectUsers(UserRole userRole, int pageNum, int pageSize, String orderColumn, String order) {
-        Page userPage = userMapper.selectByPageNumSize(userRole, pageNum, pageSize, orderColumn, order);
+    public PageResult<UserWithBLOBs> selectUsers(UserRole userRole, PageBean pageBean) {
+        Page userPage = userMapper.selectByPageNumSize(userRole, pageBean.getPageNum(), pageBean.getPageSize(), pageBean.getOrderName(), pageBean.getOrderType());
         if(userPage.size() > 0) {
             return PageResult.getPageResult(userPage);
         } else {

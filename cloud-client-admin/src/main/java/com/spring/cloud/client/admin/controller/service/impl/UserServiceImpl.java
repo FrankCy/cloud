@@ -3,6 +3,7 @@ package com.spring.cloud.client.admin.controller.service.impl;
 import com.spring.cloud.client.admin.controller.service.UserService;
 import com.spring.cloud.client.admin.controller.service.dataservice.UserDataService;
 import com.spring.cloud.common.po.UserWithBLOBs;
+import com.spring.cloud.common.vo.PageBean;
 import com.spring.cloud.common.vo.PageResult;
 import com.spring.cloud.common.vo.UserRole;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,9 +50,9 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public PageResult<UserWithBLOBs> selectUsers(UserRole userRole, int pageNum, int pageSize, String orderName, String orderType) {
+    public PageResult<UserWithBLOBs> selectUsers(UserRole userRole, PageBean pageBean) {
         // TODO 这里可以做客户端的逻辑处理
-        return userDataService.selectUsers(userRole, pageNum, pageSize, orderName, orderType);
+        return userDataService.selectUsers(userRole, pageBean);
     }
 
 

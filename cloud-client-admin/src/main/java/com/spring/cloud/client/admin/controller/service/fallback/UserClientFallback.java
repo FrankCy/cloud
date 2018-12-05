@@ -2,6 +2,7 @@ package com.spring.cloud.client.admin.controller.service.fallback;
 
 import com.spring.cloud.client.admin.controller.service.dataservice.UserDataService;
 import com.spring.cloud.common.po.UserWithBLOBs;
+import com.spring.cloud.common.vo.PageBean;
 import com.spring.cloud.common.vo.PageResult;
 import com.spring.cloud.common.vo.UserRole;
 import org.springframework.stereotype.Component;
@@ -40,7 +41,7 @@ public class UserClientFallback implements UserDataService {
     }
 
     @Override
-    public PageResult<UserWithBLOBs> selectUsers(UserRole userRole, int pageNum, int pageSize, String orderName, String orderType) {
+    public PageResult<UserWithBLOBs> selectUsers(UserRole userRole, PageBean pageBean) {
         return null;
     }
 

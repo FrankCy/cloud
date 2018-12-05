@@ -1,6 +1,7 @@
 package com.spring.cloud.client.admin.controller.service;
 
 import com.spring.cloud.common.po.UserWithBLOBs;
+import com.spring.cloud.common.vo.PageBean;
 import com.spring.cloud.common.vo.PageResult;
 import com.spring.cloud.common.vo.UserRole;
 
@@ -63,12 +64,9 @@ public interface UserService {
      * @email: cy880708@163.com
      * @date: 2018/12/4 下午1:57
      * @param userRole 查询实体
-     * @param pageNum 第几页
-     * @param pageSize 每页显示条目数
-     * @param orderName 排序字段
-     * @param orderType 排序方式 (asc / desc)
+     * @param pageBean 分页实体
      * @mofified By:
      */
-    PageResult<UserWithBLOBs> selectUsers(UserRole userRole, int pageNum, int pageSize, String orderName, String orderType);
+    PageResult<UserWithBLOBs> selectUsers(UserRole userRole, PageBean pageBean);
 
 }

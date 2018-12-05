@@ -9,6 +9,7 @@ import com.spring.cloud.common.result.BdjrResult;
 import com.spring.cloud.common.util.PageUtil;
 import com.spring.cloud.common.util.StringUtil;
 import com.spring.cloud.common.util.date.DateUtils;
+import com.spring.cloud.common.vo.PageBean;
 import com.spring.cloud.common.vo.PageResult;
 import com.spring.cloud.common.vo.UserRole;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -164,8 +165,17 @@ public class UserController {
                                   @RequestParam(defaultValue = "10")  int limit,
                                   @RequestParam(defaultValue = "createTime") String orderColumn,
                                   @RequestParam(defaultValue = "desc") String order){
+        //封装分页
+        PageBean pageBean = new PageBean();
+        pageBean.setPageNum(PageUtil.getPageNum(offset, limit));
+        pageBean.setPageSize(limit);
+        pageBean.setOrderName(StringUtil.camel2Underline(orderColumn));
+        pageBean.setOrderType(order);
 
-        PageResult<UserWithBLOBs> users = userService.selectUsers(userRole, PageUtil.getPageNum(offset, limit), limit, StringUtil.camel2Underline(orderColumn), order);
+        //调用查询用户信息服务
+        PageResult<UserWithBLOBs> users = userService.selectUsers(userRole, pageBean);
+
+        //判断返回值
         if(!StringUtils.isEmpty(users)) {
             return new BdjrResult.Builder<>().success("查询成功", users).build();
         } else {
