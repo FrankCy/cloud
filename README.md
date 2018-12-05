@@ -4,7 +4,7 @@
 一个简单的Spring Cloud基础框架，集成config／Eureka／Hystrix／ActiveMQ等组件
 ### 工程介绍 ###
 工程|端口|描述
----|:--:|---:
+---|:--:|:---
 cloud|N/A|父节点
 cloud-client|9091|用户服务
 cloud-client-admin|9092|后台管理程序
