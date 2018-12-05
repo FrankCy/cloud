@@ -22,7 +22,7 @@ cloud-zuul|7777|API GateWay
 
 ### 技术栈 ###
 技术|版本|应用场景
----|:--:|---:
+---|:--:|:---
 Spring Boot|2.0.3.RELEASE|基础平台
 Spring Cloud Dependencies|Finchley.RELEASE|基础平台
 Eureka|N/A|注册中心
