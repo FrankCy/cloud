@@ -22,4 +22,11 @@ public class Constants {
      */
     public static String operaterError = "true";
 
+
+    /** 用于路由判断标识符 后台管理程序 **/
+    public static String reqServiceIdAdmin = "admin";
+
+    /** 用于路由判断标识符 接口 **/
+    public static String reqServiceIdCloudClientServer = "cloud-client-server";
+
 }

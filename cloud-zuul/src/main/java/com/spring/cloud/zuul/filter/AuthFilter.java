@@ -3,6 +3,7 @@ package com.spring.cloud.zuul.filter;
 import com.alibaba.fastjson.JSONObject;
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
+import com.spring.cloud.common.base.Constants;
 import com.spring.cloud.common.exception.BaseException;
 import com.spring.cloud.common.exception.BaseExceptionBody;
 import com.spring.cloud.common.exception.CommonError;
@@ -28,7 +29,7 @@ import static org.springframework.cloud.netflix.zuul.filters.support.FilterConst
  * @date: 2018/11/20 上午11:21
  * @mofified By:
  */
-//@Configuration
+@Configuration
 public class AuthFilter extends ZuulFilter {
 
 	private static final Logger logger = LoggerFactory.getLogger(AuthFilter.class);
@@ -42,7 +43,15 @@ public class AuthFilter extends ZuulFilter {
 	@Override
 	public Object run() {
 		RequestContext rc = RequestContext.getCurrentContext();
-		authUser(rc);
+		//判断请求服务
+		String serviceId = (String)rc.get("serviceId");
+		if(Constants.reqServiceIdAdmin.equals(serviceId)) {
+			return null;
+		} else
+		if(Constants.reqServiceIdCloudClientServer.equals(serviceId)) {
+			authUser(rc);
+		}
+
 		return null;
 	}
 
@@ -105,5 +114,20 @@ public class AuthFilter extends ZuulFilter {
 //			}
 		}
 	}
-	
+
+
+	/**
+	 * @description：后台管理程序过滤器
+	 * @version 1.0
+	 * @author: Yang.Chang
+	 * @email: cy880708@163.com
+	 * @date: 2018/12/7 上午11:47
+	 * @mofified By:
+	 */
+	public static void adminFilter(RequestContext ctx) {
+		HttpServletRequest request = ctx.getRequest();
+		Map<String, String> header = httpRequestToMap(request);
+		System.out.println(header.toString());
+	}
+
 }
