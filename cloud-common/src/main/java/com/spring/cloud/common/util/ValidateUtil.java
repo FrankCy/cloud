@@ -8,15 +8,6 @@ import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-
-/**
- * @Description：验证工具类
- * @Author: WenbinWu
- * @Email: 296231771@qq.com
- * @Date: 下午11:45 2018/2/2
- * @Mofified By:
- * @Version 1.0
- */
 public class ValidateUtil {
     public static boolean isEmail(String str) {
         if (str == null || "".equals(str.trim())) {

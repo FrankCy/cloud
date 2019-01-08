@@ -15,15 +15,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
-
-/**
- * @Description：日期工具类
- * @Author: WenbinWu
- * @Email: 296231771@qq.com
- * @Date: 下午11:45 2018/2/2
- * @Mofified By:
- * @Version 1.0
- */
 public class DateUtil {
 
 	private static final Logger logger = LoggerFactory.getLogger(DateUtil.class);
@@ -139,17 +130,10 @@ public class DateUtil {
 		}
 	}
 
-	/**
-	 * @author: WenbinWu
-	 * @Description：获取时间戳
-	 * @Date: 下午1:22 2018/2/6
-	 */
 	public static Integer getUnixTimeStampByDate(Date date) {
 		String timestamp = String.valueOf(date.getTime()/1000);
 		return Integer.valueOf(timestamp);
 	}
-
-
 
 	/**
 	 * 获取当前时间的 年月日时分秒毫秒

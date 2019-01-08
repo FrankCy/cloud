@@ -107,9 +107,6 @@ public final class StringUtil {
 
     /**
      * 获取去掉横线的长度为32的UUID串.
-     * 
-     * @author WuShuicheng.
-     * @return uuid.
      */
     public static String get32UUID() {
         return UUID.randomUUID().toString().replace("-", "");
@@ -117,9 +114,6 @@ public final class StringUtil {
 
     /**
      * 获取带横线的长度为36的UUID串.
-     * 
-     * @author WuShuicheng.
-     * @return uuid.
      */
     public static String get36UUID() {
         return UUID.randomUUID().toString();
@@ -127,11 +121,6 @@ public final class StringUtil {
 
     /**
      * 验证一个字符串是否完全由纯数字组成的字符串，当字符串为空时也返回false.
-     * 
-     * @author WuShuicheng .
-     * @param str
-     *            要判断的字符串 .
-     * @return true or false .
      */
     public static boolean isNumeric(String str) {
         if (StringUtils.isBlank(str)) {
